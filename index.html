@@ -203,50 +203,56 @@
     </header>
 
     <!-- Hero Section -->
-    <section id="hero" class="relative pt-36 pb-20 md:pt-48 md:pb-32 bg-gradient-to-br from-primary-900 to-primary-700 text-white overflow-hidden">
+    <section id="hero" class="relative md:pt-24 pt-16 pb-20 md:pt-48 md:pb-32 bg-gradient-to-br from-primary-900 to-primary-700 text-white overflow-hidden">
         <div class="absolute inset-0 opacity-10">
             <div class="absolute inset-0 bg-black opacity-50"></div>
             <div class="h-full w-full bg-[url('https://images.unsplash.com/photo-1560518883-ce09059eeffa?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1073&q=80')] bg-cover bg-center"></div>
         </div>
-        <div class="container mx-auto px-4 mt-5 relative z-10">
-            <div class="flex flex-col md:flex-row items-center  justify-between gap-12 mb-24">
-                <div class="md:w-1/2 flex justify-center animate-float animate-slide-left">
-                    <div class="relative">
-                        <div class="w-80 h-80 md:w-96 md:h-96 bg-white/10 backdrop-blur-md rounded-full absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2"></div>
-                
-                        <div class="relative z-10 text-center ">
-                         
+        <div class="container mx-auto px-4  relative z-10 mt-5  ">
+            <div class="flex flex-col md:flex-row items-center justify-between gap-4 md:gap-12  mb-8 md:mb-24 px-3 w-full">
+                <!-- First column - Circular element with text -->
+                <div class="w-full md:w-1/2 flex justify-center animate-float animate-slide-left my-4 md:my-0">
+                    <div class="relative w-full max-w-xs md:max-w-none">
+                        <!-- Made circle smaller for mobile -->
+                        <div class="w-56 h-56 sm:w-64 sm:h-64 md:w-80 md:h-80 lg:w-96 lg:h-96 bg-white/10 backdrop-blur-md rounded-full absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2"></div>
+                        
+                        <div class="relative z-10 text-center py-12 sm:py-16">
                             <div class="flex items-center">
-                                <div class="relative mx-auto mb-4">
-                                    <div class="lg:text-6xl text-4xl font-extrabold mb-2 ">
+                                <div class="relative mx-auto mb-2 sm:mb-4">
+                                    <!-- Made text smaller on mobile -->
+                                    <div class="text-2xl sm:text-3xl lg:text-6xl font-extrabold mb-1 sm:mb-2">
                                         <span class="text-white">اشتر</span>
                                         <span class="text-gold-600">بيتك</span>
                                     </div>
                                     <div class="absolute -bottom-1 right-0 w-full h-1 bg-gradient-to-l from-primary-600 to-gold-500"></div>
                                 </div>
                             </div>
-                             <p class="lg:text-6xl text-8xl md:text-7xl mb-4 text-white">0% <br><span>عمولة</span></p>
+                            <!-- Adjusted text size for better fit -->
+                            <p class="text-4xl sm:text-5xl lg:text-6xl md:text-7xl mb-2 sm:mb-4 text-white">0% <br><span>عمولة</span></p>
                         </div>
                     </div>
                 </div>
-                <div class="md:w-1/2 text-center relative md:text-right animate-slide-right ">
-                    <div class="p-5 bg-white/10 backdrop-blur-md rounded-lg  ">
-
-                        <h1
-                        class="text-3xl md:text-4xl lg:text-5xl relative font-bold mb-6 leading-tight "
-                      >
-                        هل تبحث عن شراء بيت . ارض . شقه نوفرها لك بقيمة السوق وبدون دفع أي
-                        مبلغ إضافي ؟
-                      </h1>
-                      <p class="text-lg md:text-xl opacity-90 mb-8">
-                        نحن في المسار الرقمي للخدمات العقارية ننطلق بعون الله بتقديم خدمات
-                        مميزة وحصرية بالشراكة مع ملاك العقارات وشعارنا ( اشتر عقارك %0
-                        عمولة ) .
-                      </p>
-                    </div>
-                    <a href="#contact" class="inline-block bg-gradient-to-l from-gold-600 to-gold-500 hover:from-gold-700 hover:to-gold-600 text-white font-bold py-4 px-8 rounded-lg shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300">سجل بياناتك معنا</a>
-                </div>
                 
+                <!-- Second column - Text content -->
+                <div class="w-full md:w-1/2 text-center md:text-right animate-slide-right">
+                    <div class="p-3 sm:p-4 md:p-5 bg-white/10 backdrop-blur-md rounded-lg mb-4 sm:mb-6">
+                        <!-- Further reduced text size for mobile -->
+                        <h1 class="text-xl sm:text-2xl md:text-3xl lg:text-5xl relative font-bold mb-3 md:mb-6 leading-tight">
+                            هل تبحث عن شراء بيت . ارض . شقه نوفرها لك بقيمة السوق وبدون دفع أي
+                            مبلغ إضافي ؟
+                        </h1>
+                        <!-- Smaller paragraph text -->
+                        <p class="text-sm sm:text-base md:text-xl opacity-90 mb-3 md:mb-8">
+                            نحن في المسار الرقمي للخدمات العقارية ننطلق بعون الله بتقديم خدمات
+                            مميزة وحصرية بالشراكة مع ملاك العقارات وشعارنا <br>
+                            <span class="font-bold text-lg sm:text-xl md:text-3xl">
+                                ( اشتر عقارك %0 عمولة )
+                            </span>
+                        </p>
+                    </div>
+                    <!-- Reduced button size for better mobile fit -->
+                    <a href="#contact" class="inline-block bg-gradient-to-l from-gold-600 to-gold-500 hover:from-gold-700 hover:to-gold-600 text-white font-bold py-2 px-4 sm:py-3 sm:px-6 md:py-4 md:px-8 rounded-lg shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300 mb-4 sm:mb-0">سجل بياناتك معنا</a>
+                </div>
             </div>
         </div>
         <div class="absolute bottom-0 left-0 right-0">
@@ -648,7 +654,7 @@
     </section>
 
     <!-- Floating CTA -->
-    <div class="fixed bottom-8 left-8 z-50">
+    <div class="fixed bottom-8 left-8 z-50 hidden ">
         <a href="#contact" class="flex items-center bg-gradient-to-l from-gold-600 to-gold-500 hover:from-gold-700 hover:to-gold-600 text-white font-bold py-3 px-6 rounded-full shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300">
             <i class="fas fa-headset text-xl ml-2"></i>
             <span>تواصل معنا</span>
