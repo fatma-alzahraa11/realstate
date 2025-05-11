@@ -18,16 +18,24 @@
                     },
                     colors: {
                         primary: {
-                            50: '#f0f9ff',
-                            100: '#e0f2fe',
-                            200: '#bae6fd',
-                            300: '#7dd3fc',
-                            400: '#38bdf8',
-                            500: '#0ea5e9',
-                            600: '#0284c7',
-                            700: '#0369a1',
-                            800: '#075985',
-                            900: '#0c4a6e',
+                            100: '#E8F1E4',
+          200: '#D2E3C8',
+          300: '#BBD6AC',
+          400: '#A5C990',
+          500: '#87A97F', // اللون الأساسي من اللوجو
+          600: '#6D8A68',
+          700: '#536C51',
+          800: '#394D3A',
+          900: '#1F2F23',
+        //                     100: '#FDF6EC', 
+        //   200: '#FAEBD7', 
+        //   300: '#F5E4C3', 
+        //   400: '#EED6A7',
+        //   500: '#DCC9A0',
+        //   600: '#CBB891', 
+        //   700: '#B5A177', 
+        //   800: '#9E8B61', 
+        //   900: '#7C6B4F'
                         },
                         secondary: {
                             50: '#fdf2f8',
@@ -42,15 +50,25 @@
                             900: '#831843',
                         },
                         gold: {
-                            100: '#FEF9C3',
-                            200: '#FEF08A',
-                            300: '#FDE047',
-                            400: '#FACC15',
-                            500: '#EAB308',
-                            600: '#CA8A04',
-                            700: '#A16207',
-                            800: '#854D0E',
-                            900: '#713F12',
+                            // 100: '#FEF9C3',
+                            // 200: '#FEF08A',
+                            // 300: '#FDE047',
+                            // 400: '#FACC15',
+                            // 500: '#EAB308',
+                            // 600: '#CA8A04',
+                            // 700: '#A16207',
+                            // 800: '#854D0E',
+                            // 900: '#713F12',
+                            100: '#0a0a0a', 
+          200: '#0a0a0a', 
+          300: '#0a0a0a', 
+          400: '#0a0a0a', 
+          500: '#0a0a0a', 
+          600: '#0a0a0a', 
+          700: '#0a0a0a', 
+          800: '#0a0a0a', 
+          900: '#0a0a0a', 
+                            
                         },
                         dark: '#1e293b',
                     },
@@ -125,32 +143,6 @@
 <body class="font-tajawal text-gray-800 bg-gray-50">
     <!-- Header -->
     <header class="fixed top-0 left-0 right-0 z-50 bg-white shadow-lg backdrop-blur-sm transition-all duration-300">
-        <!-- Top Bar -->
-        <div class="bg-gradient-to-l from-gold-600 to-gold-500 text-white py-1.5">
-            <div class="container mx-auto px-4 flex justify-between items-center">
-                <div class="flex items-center text-sm">
-                    <div class="flex items-center ml-4">
-                        <i class="fas fa-phone-alt ml-1.5"></i>
-                        <span>+966 XX XXX XXXX</span>
-                    </div>
-                    <div class="flex items-center">
-                        <i class="fas fa-envelope ml-1.5"></i>
-                        <span>info@example.com</span>
-                    </div>
-                </div>
-                <div class="flex space-x-3 space-x-reverse">
-                    <a href="#" class="text-white hover:text-gray-200 transition-colors duration-300">
-                        <i class="fab fa-facebook-f"></i>
-                    </a>
-                    <a href="#" class="text-white hover:text-gray-200 transition-colors duration-300">
-                        <i class="fab fa-twitter"></i>
-                    </a>
-                    <a href="#" class="text-white hover:text-gray-200 transition-colors duration-300">
-                        <i class="fab fa-instagram"></i>
-                    </a>
-                </div>
-            </div>
-        </div>
         
         <!-- Main Header -->
         <div class="container mx-auto px-4 py-4 flex items-center justify-between">
@@ -159,10 +151,10 @@
                     <img src="logo.png" alt="شعار المسار العقاري المميز" class="h-full w-full rounded-full ml-4 object-contain">
                 </div>
                 <div class="relative">
-                    <div class="text-3xl font-extrabold">
+                    <div class="text-lg lg:text-3xl font-extrabold">
                         <span class="text-primary-700">المسار</span>
-                        <span class="text-gold-600">العقاري</span>
-                        <span class="text-primary-700">المميز</span>
+                        <span class="text-gold-600">الرقمى</span>
+                        <span class="text-primary-700">المميز للخدمات العقارية</span>
                     </div>
                     <div class="absolute -bottom-1 right-0 w-full h-1 bg-gradient-to-l from-primary-600 to-gold-500"></div>
                 </div>
@@ -181,7 +173,7 @@
             
             <div class="hidden lg:block">
                 <a href="#contact" class="bg-gradient-to-l from-gold-600 to-gold-500 hover:from-gold-700 hover:to-gold-600 text-white font-bold py-2.5 px-6 rounded-lg shadow-md hover:shadow-lg transform hover:-translate-y-0.5 transition-all duration-300">
-                    احصل على استشارة مجانية
+                    سجل بياناتك معنا
                 </a>
             </div>
             
@@ -203,7 +195,7 @@
                 </ul>
                 <div class="mt-4">
                     <a href="#contact" class="block text-center bg-gradient-to-l from-gold-600 to-gold-500 hover:from-gold-700 hover:to-gold-600 text-white font-bold py-2.5 px-6 rounded-lg shadow-md hover:shadow-lg transition-all duration-300">
-                        احصل على استشارة مجانية
+                        سجل بياناتك معنا
                     </a>
                 </div>
             </div>
@@ -216,41 +208,45 @@
             <div class="absolute inset-0 bg-black opacity-50"></div>
             <div class="h-full w-full bg-[url('https://images.unsplash.com/photo-1560518883-ce09059eeffa?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1073&q=80')] bg-cover bg-center"></div>
         </div>
-        <div class="container mx-auto px-4 relative z-10">
+        <div class="container mx-auto px-4 mt-5 relative z-10">
             <div class="flex flex-col md:flex-row items-center  justify-between gap-12 mb-24">
-                <div class="md:w-1/2 text-center md:text-right animate-slide-right">
-                    <h1
-                    class="text-3xl md:text-4xl lg:text-5xl font-bold mb-6 leading-tight"
-                  >
-                    هل تبحث عن شراء بيت . ارض . شقه نوفرها لك بقيمة السوق وبدون دفع أي
-                    مبلغ إضافي ؟
-                  </h1>
-                  <p class="text-lg md:text-xl opacity-90 mb-8">
-                    نحن في المسار الرقمي للخدمات العقارية ننطلق بعون الله بتقديم خدمات
-                    مميزة وحصرية بالشراكة مع ملاك العقارات وشعارنا ( اشتر عقارك %0
-                    عمولة ) .
-                  </p>
-                    <a href="#contact" class="inline-block bg-gradient-to-l from-gold-600 to-gold-500 hover:from-gold-700 hover:to-gold-600 text-white font-bold py-4 px-8 rounded-lg shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300">احصل على استشارة مجانية</a>
-                </div>
                 <div class="md:w-1/2 flex justify-center animate-float animate-slide-left">
                     <div class="relative">
-                        <div class="w-64 h-64 md:w-96 md:h-96 bg-white/10 backdrop-blur-md rounded-full absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2"></div>
+                        <div class="w-80 h-80 md:w-96 md:h-96 bg-white/10 backdrop-blur-md rounded-full absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2"></div>
                 
                         <div class="relative z-10 text-center ">
                          
                             <div class="flex items-center">
                                 <div class="relative mx-auto mb-4">
-                                    <div class="text-6xl font-extrabold ">
+                                    <div class="lg:text-6xl text-4xl font-extrabold mb-2 ">
                                         <span class="text-white">اشتر</span>
-                                        <span class="text-gold-600">عقارك</span>
+                                        <span class="text-gold-600">بيتك</span>
                                     </div>
                                     <div class="absolute -bottom-1 right-0 w-full h-1 bg-gradient-to-l from-primary-600 to-gold-500"></div>
                                 </div>
                             </div>
-                             <p class="text-8xl md:text-7xl mb-4 text-white">0% <br><span>عمولة</span></p>
+                             <p class="lg:text-6xl text-8xl md:text-7xl mb-4 text-white">0% <br><span>عمولة</span></p>
                         </div>
                     </div>
                 </div>
+                <div class="md:w-1/2 text-center relative md:text-right animate-slide-right ">
+                    <div class="p-5 bg-white/10 backdrop-blur-md rounded-lg  ">
+
+                        <h1
+                        class="text-3xl md:text-4xl lg:text-5xl relative font-bold mb-6 leading-tight "
+                      >
+                        هل تبحث عن شراء بيت . ارض . شقه نوفرها لك بقيمة السوق وبدون دفع أي
+                        مبلغ إضافي ؟
+                      </h1>
+                      <p class="text-lg md:text-xl opacity-90 mb-8">
+                        نحن في المسار الرقمي للخدمات العقارية ننطلق بعون الله بتقديم خدمات
+                        مميزة وحصرية بالشراكة مع ملاك العقارات وشعارنا ( اشتر عقارك %0
+                        عمولة ) .
+                      </p>
+                    </div>
+                    <a href="#contact" class="inline-block bg-gradient-to-l from-gold-600 to-gold-500 hover:from-gold-700 hover:to-gold-600 text-white font-bold py-4 px-8 rounded-lg shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300">سجل بياناتك معنا</a>
+                </div>
+                
             </div>
         </div>
         <div class="absolute bottom-0 left-0 right-0">
@@ -263,7 +259,7 @@
        <section id="about" class="py-20 md:py-28">
         <div class="container mx-auto px-4">
             <div class="text-center mb-16">
-                <h2 class="text-3xl md:text-4xl font-bold mb-4 text-primary-800">المسار العقاري المميز</h2>
+                <h2 class="text-3xl md:text-4xl font-bold mb-4 text-primary-800">المسار الرقمى المميز للخدمات العقارية</h2>
                 <div class="w-24 h-1 bg-gradient-to-l from-gold-600 to-gold-500 mx-auto"></div>
             </div>
             <div class="max-w-4xl mx-auto text-center mb-16">
@@ -539,7 +535,7 @@
             <h2 class="text-3xl md:text-4xl font-bold mb-6">استثمر في مستقبلك العقاري</h2>
             <p class="text-lg md:text-xl max-w-3xl mx-auto mb-10 opacity-90">نحن نساعدك في اتخاذ القرار الاستثماري الصحيح في سوق العقارات السعودي. تواصل معنا اليوم للحصول على استشارة عقارية مجانية.</p>
             <div class="flex flex-col md:flex-row gap-4 justify-center">
-                <a href="#contact" class="bg-white text-primary-800 hover:bg-gray-100 font-bold py-3 px-8 rounded-lg shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300">احصل على استشارة مجانية</a>
+                <a href="#contact" class="bg-white text-primary-800 hover:bg-gray-100 font-bold py-3 px-8 rounded-lg shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300">سجل بياناتك معنا</a>
                 <a href="#projects" class="bg-transparent border-2 border-white text-white hover:bg-white/10 font-bold py-3 px-8 rounded-lg shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300">مشاهدة مشاريعنا</a>
             </div>
         </div>
