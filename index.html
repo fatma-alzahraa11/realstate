@@ -1,1282 +1,724 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>المسار الرقمي المميز للخدمات العقارية</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;800&display=swap"
-      rel="stylesheet"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
-    />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
-      tailwind.config = {
-        theme: {
-          extend: {
-            fontFamily: {
-              tajawal: ["Tajawal", "sans-serif"],
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        tajawal: ['Tajawal', 'sans-serif'],
+                    },
+                    colors: {
+                        primary: {
+                            50: '#f0f9ff',
+                            100: '#e0f2fe',
+                            200: '#bae6fd',
+                            300: '#7dd3fc',
+                            400: '#38bdf8',
+                            500: '#0ea5e9',
+                            600: '#0284c7',
+                            700: '#0369a1',
+                            800: '#075985',
+                            900: '#0c4a6e',
+                        },
+                        secondary: {
+                            50: '#fdf2f8',
+                            100: '#fce7f3',
+                            200: '#fbcfe8',
+                            300: '#f9a8d4',
+                            400: '#f472b6',
+                            500: '#ec4899',
+                            600: '#db2777',
+                            700: '#be185d',
+                            800: '#9d174d',
+                            900: '#831843',
+                        },
+                        gold: {
+                            100: '#FEF9C3',
+                            200: '#FEF08A',
+                            300: '#FDE047',
+                            400: '#FACC15',
+                            500: '#EAB308',
+                            600: '#CA8A04',
+                            700: '#A16207',
+                            800: '#854D0E',
+                            900: '#713F12',
+                        },
+                        dark: '#1e293b',
+                    },
+                    backgroundImage: {
+                        'hero-pattern': "url('https://images.unsplash.com/photo-1560518883-ce09059eeffa?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1073&q=80')",
+                    },
+                },
             },
-            colors: {
-              primary: {
-                50: "#f0f9ff",
-                100: "#e0f2fe",
-                200: "#bae6fd",
-                300: "#7dd3fc",
-                400: "#38bdf8",
-                500: "#0ea5e9",
-                600: "#0284c7",
-                700: "#0369a1",
-                800: "#075985",
-                900: "#0c4a6e",
-              },
-              secondary: {
-                50: "#fdf2f8",
-                100: "#fce7f3",
-                200: "#fbcfe8",
-                300: "#f9a8d4",
-                400: "#f472b6",
-                500: "#ec4899",
-                600: "#db2777",
-                700: "#be185d",
-                800: "#9d174d",
-                900: "#831843",
-              },
-              gold: {
-                100: "#FEF9C3",
-                200: "#FEF08A",
-                300: "#FDE047",
-                400: "#FACC15",
-                500: "#EAB308",
-                600: "#CA8A04",
-                700: "#A16207",
-                800: "#854D0E",
-                900: "#713F12",
-              },
-              dark: "#1e293b",
-            },
-            backgroundImage: {
-              "hero-pattern":
-                "url('https://images.unsplash.com/photo-1560518883-ce09059eeffa?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1073&q=80')",
-            },
-          },
-        },
-      };
+        }
     </script>
     <style type="text/css">
-      @keyframes float {
-        0% {
-          transform: translateY(0px);
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+            100% { transform: translateY(0px); }
         }
-        50% {
-          transform: translateY(-20px);
+        .animate-float {
+            animation: float 6s ease-in-out infinite;
         }
-        100% {
-          transform: translateY(0px);
+        @keyframes slideRight {
+            0% { transform: translateX(-100%); opacity: 0; }
+            100% { transform: translateX(0); opacity: 1; }
         }
-      }
-      .animate-float {
-        animation: float 6s ease-in-out infinite;
-      }
-      @keyframes slideRight {
-        0% {
-          transform: translateX(-100%);
-          opacity: 0;
+        .animate-slide-right {
+            animation: slideRight 0.8s ease-out forwards;
         }
-        100% {
-          transform: translateX(0);
-          opacity: 1;
+        @keyframes slideLeft {
+            0% { transform: translateX(100%); opacity: 0; }
+            100% { transform: translateX(0); opacity: 1; }
         }
-      }
-      .animate-slide-right {
-        animation: slideRight 0.8s ease-out forwards;
-      }
-      @keyframes slideLeft {
-        0% {
-          transform: translateX(100%);
-          opacity: 0;
+        .animate-slide-left {
+            animation: slideLeft 0.8s ease-out forwards;
         }
-        100% {
-          transform: translateX(0);
-          opacity: 1;
+        @keyframes fadeUp {
+            0% { transform: translateY(30px); opacity: 0; }
+            100% { transform: translateY(0); opacity: 1; }
         }
-      }
-      .animate-slide-left {
-        animation: slideLeft 0.8s ease-out forwards;
-      }
-      @keyframes fadeUp {
-        0% {
-          transform: translateY(30px);
-          opacity: 0;
+        .animate-fade-up {
+            animation: fadeUp 0.8s ease-out forwards;
         }
-        100% {
-          transform: translateY(0);
-          opacity: 1;
+        .testimonial-slider {
+            overflow: hidden;
         }
-      }
-      .animate-fade-up {
-        animation: fadeUp 0.8s ease-out forwards;
-      }
-      .testimonial-slider {
-        overflow: hidden;
-      }
-
-      .nav-link {
-        position: relative;
-      }
-      .nav-link::after {
-        content: "";
-        position: absolute;
-        width: 0;
-        height: 2px;
-        bottom: -4px;
-        right: 0;
-        background-color: #db2777;
-        transition: width 0.3s ease;
-      }
-      .nav-link:hover::after {
-        width: 100%;
-      }
-      .mobile-menu {
-        max-height: 0;
-        overflow: hidden;
-        transition: max-height 0.5s ease;
-      }
-      .mobile-menu.active {
-        max-height: 500px;
-      }
+        
+        
+        .nav-link {
+            position: relative;
+        }
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -4px;
+            right: 0;
+            background-color: #db2777;
+            transition: width 0.3s ease;
+        }
+        .nav-link:hover::after {
+            width: 100%;
+        }
+        .mobile-menu {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.5s ease;
+        }
+        .mobile-menu.active {
+            max-height: 500px;
+        }
     </style>
-  </head>
-  <body class="font-tajawal text-gray-800 bg-gray-50">
+</head>
+<body class="font-tajawal text-gray-800 bg-gray-50">
     <!-- Header -->
-    <header
-      class="fixed top-0 left-0 right-0 z-50 bg-white shadow-lg backdrop-blur-sm transition-all duration-300"
-    >
-      <!-- Top Bar -->
-      <div class="bg-gradient-to-l from-gold-600 to-gold-500 text-white py-1.5">
-        <div class="container mx-auto px-4 flex justify-between items-center">
-          <div class="flex items-center text-sm">
-            <div class="flex items-center ml-4">
-              <i class="fas fa-phone-alt ml-1.5"></i>
-              <span>+966 XX XXX XXXX</span>
+    <header class="fixed top-0 left-0 right-0 z-50 bg-white shadow-lg backdrop-blur-sm transition-all duration-300">
+        <!-- Top Bar -->
+        <div class="bg-gradient-to-l from-gold-600 to-gold-500 text-white py-1.5">
+            <div class="container mx-auto px-4 flex justify-between items-center">
+                <div class="flex items-center text-sm">
+                    <div class="flex items-center ml-4">
+                        <i class="fas fa-phone-alt ml-1.5"></i>
+                        <span>+966 XX XXX XXXX</span>
+                    </div>
+                    <div class="flex items-center">
+                        <i class="fas fa-envelope ml-1.5"></i>
+                        <span>info@example.com</span>
+                    </div>
+                </div>
+                <div class="flex space-x-3 space-x-reverse">
+                    <a href="#" class="text-white hover:text-gray-200 transition-colors duration-300">
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
+                    <a href="#" class="text-white hover:text-gray-200 transition-colors duration-300">
+                        <i class="fab fa-twitter"></i>
+                    </a>
+                    <a href="#" class="text-white hover:text-gray-200 transition-colors duration-300">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                </div>
             </div>
+        </div>
+        
+        <!-- Main Header -->
+        <div class="container mx-auto px-4 py-4 flex items-center justify-between">
             <div class="flex items-center">
-              <i class="fas fa-envelope ml-1.5"></i>
-              <span>info@example.com</span>
+                <div class="relative">
+                    <div class="text-3xl font-extrabold">
+                        <span class="text-primary-700">المسار</span>
+                        <span class="text-gold-600">العقاري</span>
+                        <span class="text-primary-700">المميز</span>
+                    </div>
+                    <div class="absolute -bottom-1 right-0 w-full h-1 bg-gradient-to-l from-primary-600 to-gold-500"></div>
+                </div>
             </div>
-          </div>
-          <div class="flex space-x-3 space-x-reverse">
-            <a
-              href="#"
-              class="text-white hover:text-gray-200 transition-colors duration-300"
-            >
-              <i class="fab fa-facebook-f"></i>
-            </a>
-            <a
-              href="#"
-              class="text-white hover:text-gray-200 transition-colors duration-300"
-            >
-              <i class="fab fa-twitter"></i>
-            </a>
-            <a
-              href="#"
-              class="text-white hover:text-gray-200 transition-colors duration-300"
-            >
-              <i class="fab fa-instagram"></i>
-            </a>
-          </div>
-        </div>
-      </div>
-
-      <!-- Main Header -->
-      <div
-        class="container mx-auto px-4 py-4 flex items-center justify-between"
-      >
-        <div class="flex items-center">
-          <div class="relative">
-            <div class="text-3xl font-extrabold">
-              <span class="text-primary-700">المسار</span>
-              <span class="text-gold-600">العقاري</span>
-              <span class="text-primary-700">المميز</span>
+            
+            <nav class="hidden lg:block">
+                <ul class="flex space-x-8 space-x-reverse">
+                    <li><a href="#hero" class="nav-link font-semibold text-gray-700 hover:text-primary-600 transition-colors duration-300">الرئيسية</a></li>
+                    <li><a href="#about" class="nav-link font-semibold text-gray-700 hover:text-primary-600 transition-colors duration-300">من نحن</a></li>
+                    <li><a href="#features" class="nav-link font-semibold text-gray-700 hover:text-primary-600 transition-colors duration-300">المميزات</a></li>
+                    <li><a href="#services" class="nav-link font-semibold text-gray-700 hover:text-primary-600 transition-colors duration-300">الخدمات</a></li>
+                    <li><a href="#projects" class="nav-link font-semibold text-gray-700 hover:text-primary-600 transition-colors duration-300">مشاريعنا</a></li>
+                    <li><a href="#contact" class="nav-link font-semibold text-gray-700 hover:text-primary-600 transition-colors duration-300">اتصل بنا</a></li>
+                </ul>
+            </nav>
+            
+            <div class="hidden lg:block">
+                <a href="#contact" class="bg-gradient-to-l from-gold-600 to-gold-500 hover:from-gold-700 hover:to-gold-600 text-white font-bold py-2.5 px-6 rounded-lg shadow-md hover:shadow-lg transform hover:-translate-y-0.5 transition-all duration-300">
+                    احصل على استشارة مجانية
+                </a>
             </div>
-            <div
-              class="absolute -bottom-1 right-0 w-full h-1 bg-gradient-to-l from-primary-600 to-gold-500"
-            ></div>
-          </div>
+            
+            <div class="lg:hidden text-2xl cursor-pointer text-gray-700" id="menu-toggle">
+                <i class="fas fa-bars"></i>
+            </div>
         </div>
-
-        <nav class="hidden lg:block">
-          <ul class="flex space-x-8 space-x-reverse">
-            <li>
-              <a
-                href="#hero"
-                class="nav-link font-semibold text-gray-700 hover:text-primary-600 transition-colors duration-300"
-                >الرئيسية</a
-              >
-            </li>
-            <li>
-              <a
-                href="#about"
-                class="nav-link font-semibold text-gray-700 hover:text-primary-600 transition-colors duration-300"
-                >من نحن</a
-              >
-            </li>
-            <li>
-              <a
-                href="#features"
-                class="nav-link font-semibold text-gray-700 hover:text-primary-600 transition-colors duration-300"
-                >المميزات</a
-              >
-            </li>
-            <li>
-              <a
-                href="#services"
-                class="nav-link font-semibold text-gray-700 hover:text-primary-600 transition-colors duration-300"
-                >الخدمات</a
-              >
-            </li>
-            <li>
-              <a
-                href="#projects"
-                class="nav-link font-semibold text-gray-700 hover:text-primary-600 transition-colors duration-300"
-                >مشاريعنا</a
-              >
-            </li>
-            <li>
-              <a
-                href="#contact"
-                class="nav-link font-semibold text-gray-700 hover:text-primary-600 transition-colors duration-300"
-                >اتصل بنا</a
-              >
-            </li>
-          </ul>
-        </nav>
-
-        <div class="hidden lg:block">
-          <a
-            href="#contact"
-            class="bg-gradient-to-l from-gold-600 to-gold-500 hover:from-gold-700 hover:to-gold-600 text-white font-bold py-2.5 px-6 rounded-lg shadow-md hover:shadow-lg transform hover:-translate-y-0.5 transition-all duration-300"
-          >
-            احصل على استشارة مجانية
-          </a>
+        
+        <!-- Mobile Menu -->
+        <div class="mobile-menu lg:hidden" id="mobile-menu">
+            <div class="container mx-auto px-4 py-3 bg-white border-t border-gray-100">
+                <ul class="space-y-3">
+                    <li><a href="#hero" class="block font-semibold text-gray-700 hover:text-primary-600 transition-colors duration-300">الرئيسية</a></li>
+                    <li><a href="#about" class="block font-semibold text-gray-700 hover:text-primary-600 transition-colors duration-300">من نحن</a></li>
+                    <li><a href="#features" class="block font-semibold text-gray-700 hover:text-primary-600 transition-colors duration-300">المميزات</a></li>
+                    <li><a href="#services" class="block font-semibold text-gray-700 hover:text-primary-600 transition-colors duration-300">الخدمات</a></li>
+                    <li><a href="#projects" class="block font-semibold text-gray-700 hover:text-primary-600 transition-colors duration-300">مشاريعنا</a></li>
+                    <li><a href="#contact" class="block font-semibold text-gray-700 hover:text-primary-600 transition-colors duration-300">اتصل بنا</a></li>
+                </ul>
+                <div class="mt-4">
+                    <a href="#contact" class="block text-center bg-gradient-to-l from-gold-600 to-gold-500 hover:from-gold-700 hover:to-gold-600 text-white font-bold py-2.5 px-6 rounded-lg shadow-md hover:shadow-lg transition-all duration-300">
+                        احصل على استشارة مجانية
+                    </a>
+                </div>
+            </div>
         </div>
-
-        <div
-          class="lg:hidden text-2xl cursor-pointer text-gray-700"
-          id="menu-toggle"
-        >
-          <i class="fas fa-bars"></i>
-        </div>
-      </div>
-
-      <!-- Mobile Menu -->
-      <div class="mobile-menu lg:hidden" id="mobile-menu">
-        <div
-          class="container mx-auto px-4 py-3 bg-white border-t border-gray-100"
-        >
-          <ul class="space-y-3">
-            <li>
-              <a
-                href="#hero"
-                class="block font-semibold text-gray-700 hover:text-primary-600 transition-colors duration-300"
-                >الرئيسية</a
-              >
-            </li>
-            <li>
-              <a
-                href="#about"
-                class="block font-semibold text-gray-700 hover:text-primary-600 transition-colors duration-300"
-                >من نحن</a
-              >
-            </li>
-            <li>
-              <a
-                href="#features"
-                class="block font-semibold text-gray-700 hover:text-primary-600 transition-colors duration-300"
-                >المميزات</a
-              >
-            </li>
-            <li>
-              <a
-                href="#services"
-                class="block font-semibold text-gray-700 hover:text-primary-600 transition-colors duration-300"
-                >الخدمات</a
-              >
-            </li>
-            <li>
-              <a
-                href="#projects"
-                class="block font-semibold text-gray-700 hover:text-primary-600 transition-colors duration-300"
-                >مشاريعنا</a
-              >
-            </li>
-            <li>
-              <a
-                href="#contact"
-                class="block font-semibold text-gray-700 hover:text-primary-600 transition-colors duration-300"
-                >اتصل بنا</a
-              >
-            </li>
-          </ul>
-          <div class="mt-4">
-            <a
-              href="#contact"
-              class="block text-center bg-gradient-to-l from-gold-600 to-gold-500 hover:from-gold-700 hover:to-gold-600 text-white font-bold py-2.5 px-6 rounded-lg shadow-md hover:shadow-lg transition-all duration-300"
-            >
-              احصل على استشارة مجانية
-            </a>
-          </div>
-        </div>
-      </div>
     </header>
 
     <!-- Hero Section -->
-    <section
-      id="hero"
-      class="relative pt-36 pb-20 md:pt-48 md:pb-32 bg-gradient-to-br from-primary-900 to-primary-700 text-white overflow-hidden"
-    >
-      <div class="absolute inset-0 opacity-10">
-        <div class="absolute inset-0 bg-black opacity-50"></div>
-        <div
-          class="h-full w-full bg-[url('https://images.unsplash.com/photo-1560518883-ce09059eeffa?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1073&q=80')] bg-cover bg-center"
-        ></div>
-      </div>
-      <div class="container mx-auto px-4 relative z-10">
-        <div
-          class="flex flex-col md:flex-row items-center justify-between gap-12 mb-24"
-        >
-          <div class="md:w-1/2 text-center md:text-right animate-slide-right">
-            <h1
-              class="text-3xl md:text-4xl lg:text-5xl font-bold mb-6 leading-tight"
-            >
-              هل تبحث عن شراء بيت . ارض . شقه نوفرها لك بقيمة السوق وبدون دفع أي
-              مبلغ إضافي ؟
-            </h1>
-            <p class="text-lg md:text-xl opacity-90 mb-8">
-              نحن في المسار الرقمي للخدمات العقارية ننطلق بعون الله بتقديم خدمات
-              مميزة وحصرية بالشراكة مع ملاك العقارات وشعارنا ( اشتر عقارك %0
-              عمولة ) .
-            </p>
-            <a
-              href="#contact"
-              class="inline-block bg-gradient-to-l from-gold-600 to-gold-500 hover:from-gold-700 hover:to-gold-600 text-white font-bold py-4 px-8 rounded-lg shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300"
-              >احصل على استشارة مجانية</a
-            >
-          </div>
-          <div
-            class="md:w-1/2 flex justify-center animate-float animate-slide-left"
-          >
-            <div class="relative">
-              <div
-                class="w-64 h-64 md:w-96 md:h-96 bg-white/10 backdrop-blur-md rounded-full absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2"
-              ></div>
-
-              <div class="relative z-10 text-center">
-                <div class="flex items-center">
-                  <div class="relative mx-auto mb-4">
-                    <div class="text-6xl font-extrabold">
-                      <span class="text-white">اشتر</span>
-                      <span class="text-gold-600">عقارك</span>
-                    </div>
-                    <div
-                      class="absolute -bottom-1 right-0 w-full h-1 bg-gradient-to-l from-primary-600 to-gold-500"
-                    ></div>
-                  </div>
+    <section id="hero" class="relative pt-36 pb-20 md:pt-48 md:pb-32 bg-gradient-to-br from-primary-900 to-primary-700 text-white overflow-hidden">
+        <div class="absolute inset-0 opacity-10">
+            <div class="absolute inset-0 bg-black opacity-50"></div>
+            <div class="h-full w-full bg-[url('https://images.unsplash.com/photo-1560518883-ce09059eeffa?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1073&q=80')] bg-cover bg-center"></div>
+        </div>
+        <div class="container mx-auto px-4 relative z-10">
+            <div class="flex flex-col md:flex-row items-center  justify-between gap-12 mb-24">
+                <div class="md:w-1/2 text-center md:text-right animate-slide-right">
+                    <h1
+                    class="text-3xl md:text-4xl lg:text-5xl font-bold mb-6 leading-tight"
+                  >
+                    هل تبحث عن شراء بيت . ارض . شقه نوفرها لك بقيمة السوق وبدون دفع أي
+                    مبلغ إضافي ؟
+                  </h1>
+                  <p class="text-lg md:text-xl opacity-90 mb-8">
+                    نحن في المسار الرقمي للخدمات العقارية ننطلق بعون الله بتقديم خدمات
+                    مميزة وحصرية بالشراكة مع ملاك العقارات وشعارنا ( اشتر عقارك %0
+                    عمولة ) .
+                  </p>
+                    <a href="#contact" class="inline-block bg-gradient-to-l from-gold-600 to-gold-500 hover:from-gold-700 hover:to-gold-600 text-white font-bold py-4 px-8 rounded-lg shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300">احصل على استشارة مجانية</a>
                 </div>
-                <p class="text-8xl md:text-7xl mb-4 text-white">
-                  0% <br /><span>عمولة</span>
-                </p>
-              </div>
+                <div class="md:w-1/2 flex justify-center animate-float animate-slide-left">
+                    <div class="relative">
+                        <div class="w-64 h-64 md:w-96 md:h-96 bg-white/10 backdrop-blur-md rounded-full absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2"></div>
+                
+                        <div class="relative z-10 text-center ">
+                         
+                            <div class="flex items-center">
+                                <div class="relative mx-auto mb-4">
+                                    <div class="text-6xl font-extrabold ">
+                                        <span class="text-white">اشتر</span>
+                                        <span class="text-gold-600">عقارك</span>
+                                    </div>
+                                    <div class="absolute -bottom-1 right-0 w-full h-1 bg-gradient-to-l from-primary-600 to-gold-500"></div>
+                                </div>
+                            </div>
+                             <p class="text-8xl md:text-7xl mb-4 text-white">0% <br><span>عمولة</span></p>
+                        </div>
+                    </div>
+                </div>
             </div>
-          </div>
         </div>
-      </div>
-      <div class="absolute bottom-0 left-0 right-0">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
-          <path
-            fill="#f9fafb"
-            fill-opacity="1"
-            d="M0,96L48,112C96,128,192,160,288,160C384,160,480,128,576,122.7C672,117,768,139,864,149.3C960,160,1056,160,1152,138.7C1248,117,1344,75,1392,53.3L1440,32L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"
-          ></path>
-        </svg>
-      </div>
+        <div class="absolute bottom-0 left-0 right-0">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+                <path fill="#f9fafb" fill-opacity="1" d="M0,96L48,112C96,128,192,160,288,160C384,160,480,128,576,122.7C672,117,768,139,864,149.3C960,160,1056,160,1152,138.7C1248,117,1344,75,1392,53.3L1440,32L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path>
+            </svg>
+        </div>
     </section>
-    <!-- About Section -->
-    <section id="about" class="py-20 md:py-28">
-      <div class="container mx-auto px-4">
-        <div class="text-center mb-16">
-          <h2 class="text-3xl md:text-4xl font-bold mb-4 text-primary-800">
-            المسار العقاري المميز
-          </h2>
-          <div
-            class="w-24 h-1 bg-gradient-to-l from-gold-600 to-gold-500 mx-auto"
-          ></div>
+       <!-- About Section -->
+       <section id="about" class="py-20 md:py-28">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4 text-primary-800">المسار العقاري المميز</h2>
+                <div class="w-24 h-1 bg-gradient-to-l from-gold-600 to-gold-500 mx-auto"></div>
+            </div>
+            <div class="max-w-4xl mx-auto text-center mb-16">
+                <h3 class="text-2xl font-bold text-gold-600 mb-6">هلا بالعقاريين</h3>
+                <p class="text-gray-600 mb-4">اينما كنت في السعودية وحاصل علي رخصة فال كمسوق فردي أو وسيط عقاري وحاب ترتقي بعملك تقنيا وتتطور بأعمالك في المجال العقاري.</p>
+                <p class="text-gray-600">نحن في المسار العقاري المميز نقدم لك عدة خدمات نساعدك في الارتقاء بخدماتك ابتداءا من تقديم استشارات عقارية متخصصة تساعدك في تسويق عقاراتك وبكل سهولة. كما ستجد اتفاقيات مع شركات معتمدة بامكانك التواصل والاتفاق معهم بكل أريحية تامه في إتمام اعمالك.</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="bg-white p-8 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300">
+                    <h3 class="text-xl font-bold mb-4 text-primary-700 border-b border-gray-200 pb-2">خدماتنا للوسطاء العقاريين</h3>
+                    <ul class="space-y-3 text-gray-600">
+                        <li class="flex">
+                            <i class="fas fa-check-circle text-green-500 mt-1 ml-2"></i>
+                            <span>نقدم استشارات عقارية متخصصة تساعدك في تسويق العقارات بشكل احترافي</span>
+                        </li>
+                        <li class="flex">
+                            <i class="fas fa-check-circle text-green-500 mt-1 ml-2"></i>
+                            <span>نساعدك في توسيع نطاق تسويقك وعمل وساطات واتفاقيات في المجال العقاري</span>
+                        </li>
+                        <li class="flex">
+                            <i class="fas fa-check-circle text-green-500 mt-1 ml-2"></i>
+                            <span>نوفر لك فرص تسويقية مميزة للوصول إلى شريحة أكبر من العملاء المحتملين</span>
+                        </li>
+                    </ul>
+                </div>
+                <div class="bg-white p-8 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300">
+                    <h3 class="text-xl font-bold mb-4 text-primary-700 border-b border-gray-200 pb-2">خدماتنا لملاك العقارات</h3>
+                    <p class="text-gray-600">قريبا ستجدون قائمة من الشركات التسويقية الكبرى العقارية المعتمدة في السوق السعودي لتسويق عقاراتكم حصري. اراضي. فلل. منتجعات. فنادق. مباني.</p>
+                </div>
+                <div class="bg-white p-8 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300">
+                    <h3 class="text-xl font-bold mb-4 text-primary-700 border-b border-gray-200 pb-2">خدماتنا للمطورين العقاريين</h3>
+                    <p class="text-gray-600">قريبا ستجدون اراضي بمساحات مختلفة يرغب أصحابها باستثمارها لمشاريع ويبحثون عن مطورين بالمشاركة.</p>
+                </div>
+                <div class="bg-white p-8 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300">
+                    <h3 class="text-xl font-bold mb-4 text-primary-700 border-b border-gray-200 pb-2">خدماتنا للمستثمرين في المجال العقاري</h3>
+                    <ul class="space-y-3 text-gray-600">
+                        <li class="flex">
+                            <i class="fas fa-check-circle text-green-500 mt-1 ml-2"></i>
+                            <span>نجد لك فرص كبيرة وصفقات عقارية مغرية.</span>
+                        </li>
+                        <li class="flex">
+                            <i class="fas fa-check-circle text-green-500 mt-1 ml-2"></i>
+                            <span>نقدم لك دراسة واستشارة للمشاريع العقارية المربحة.</span>
+                        </li>
+                    </ul>
+                </div>
+                <div class="bg-white p-8 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300">
+                    <h3 class="text-xl font-bold mb-4 text-primary-700 border-b border-gray-200 pb-2">خدماتنا للمكاتب الهندسية</h3>
+                    <p class="text-gray-600">نرحب بكم ونقدم خدماتكم لكل العقاريين في السعودية بشرط التأكد من قدرة مكتبكم وإمكانياته والخبرة وان تكونوا معتمدين ولكم عدة مشاريع في السوق. لتقديم الطلب علي الايميل .............. وإرسال الموقع الخاص بكم أو البروفايل</p>
+                </div>
+                <div class="bg-white p-8 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300">
+                    <h3 class="text-xl font-bold mb-4 text-primary-700 border-b border-gray-200 pb-2">خدماتنا لشركات المقاولات</h3>
+                    <p class="text-gray-600">نرحب بكم ونقدم خدماتكم لكل العقاريين في السعودية بشرط إثبات التصنيف لشركتكم وان يكون لكم عدة مشاريع كبيرة قائمة لتقديم الطلب على الايميل ............ او الاتصال</p>
+                </div>
+            </div>
         </div>
-        <div class="max-w-4xl mx-auto text-center mb-16">
-          <h3 class="text-2xl font-bold text-gold-600 mb-6">هلا بالعقاريين</h3>
-          <p class="text-gray-600 mb-4">
-            اينما كنت في السعودية وحاصل علي رخصة فال كمسوق فردي أو وسيط عقاري
-            وحاب ترتقي بعملك تقنيا وتتطور بأعمالك في المجال العقاري.
-          </p>
-          <p class="text-gray-600">
-            نحن في المسار العقاري المميز نقدم لك عدة خدمات نساعدك في الارتقاء
-            بخدماتك ابتداءا من تقديم استشارات عقارية متخصصة تساعدك في تسويق
-            عقاراتك وبكل سهولة. كما ستجد اتفاقيات مع شركات معتمدة بامكانك
-            التواصل والاتفاق معهم بكل أريحية تامه في إتمام اعمالك.
-          </p>
-        </div>
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          <div
-            class="bg-white p-8 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300"
-          >
-            <h3
-              class="text-xl font-bold mb-4 text-primary-700 border-b border-gray-200 pb-2"
-            >
-              خدماتنا للوسطاء العقاريين
-            </h3>
-            <ul class="space-y-3 text-gray-600">
-              <li class="flex">
-                <i class="fas fa-check-circle text-green-500 mt-1 ml-2"></i>
-                <span
-                  >نقدم استشارات عقارية متخصصة تساعدك في تسويق العقارات بشكل
-                  احترافي</span
-                >
-              </li>
-              <li class="flex">
-                <i class="fas fa-check-circle text-green-500 mt-1 ml-2"></i>
-                <span
-                  >نساعدك في توسيع نطاق تسويقك وعمل وساطات واتفاقيات في المجال
-                  العقاري</span
-                >
-              </li>
-              <li class="flex">
-                <i class="fas fa-check-circle text-green-500 mt-1 ml-2"></i>
-                <span
-                  >نوفر لك فرص تسويقية مميزة للوصول إلى شريحة أكبر من العملاء
-                  المحتملين</span
-                >
-              </li>
-            </ul>
-          </div>
-          <div
-            class="bg-white p-8 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300"
-          >
-            <h3
-              class="text-xl font-bold mb-4 text-primary-700 border-b border-gray-200 pb-2"
-            >
-              خدماتنا لملاك العقارات
-            </h3>
-            <p class="text-gray-600">
-              قريبا ستجدون قائمة من الشركات التسويقية الكبرى العقارية المعتمدة
-              في السوق السعودي لتسويق عقاراتكم حصري. اراضي. فلل. منتجعات. فنادق.
-              مباني.
-            </p>
-          </div>
-          <div
-            class="bg-white p-8 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300"
-          >
-            <h3
-              class="text-xl font-bold mb-4 text-primary-700 border-b border-gray-200 pb-2"
-            >
-              خدماتنا للمطورين العقاريين
-            </h3>
-            <p class="text-gray-600">
-              قريبا ستجدون اراضي بمساحات مختلفة يرغب أصحابها باستثمارها لمشاريع
-              ويبحثون عن مطورين بالمشاركة.
-            </p>
-          </div>
-          <div
-            class="bg-white p-8 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300"
-          >
-            <h3
-              class="text-xl font-bold mb-4 text-primary-700 border-b border-gray-200 pb-2"
-            >
-              خدماتنا للمستثمرين في المجال العقاري
-            </h3>
-            <ul class="space-y-3 text-gray-600">
-              <li class="flex">
-                <i class="fas fa-check-circle text-green-500 mt-1 ml-2"></i>
-                <span>نجد لك فرص كبيرة وصفقات عقارية مغرية.</span>
-              </li>
-              <li class="flex">
-                <i class="fas fa-check-circle text-green-500 mt-1 ml-2"></i>
-                <span>نقدم لك دراسة واستشارة للمشاريع العقارية المربحة.</span>
-              </li>
-            </ul>
-          </div>
-          <div
-            class="bg-white p-8 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300"
-          >
-            <h3
-              class="text-xl font-bold mb-4 text-primary-700 border-b border-gray-200 pb-2"
-            >
-              خدماتنا للمكاتب الهندسية
-            </h3>
-            <p class="text-gray-600">
-              نرحب بكم ونقدم خدماتكم لكل العقاريين في السعودية بشرط التأكد من
-              قدرة مكتبكم وإمكانياته والخبرة وان تكونوا معتمدين ولكم عدة مشاريع
-              في السوق. لتقديم الطلب علي الايميل .............. وإرسال الموقع
-              الخاص بكم أو البروفايل
-            </p>
-          </div>
-          <div
-            class="bg-white p-8 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300"
-          >
-            <h3
-              class="text-xl font-bold mb-4 text-primary-700 border-b border-gray-200 pb-2"
-            >
-              خدماتنا لشركات المقاولات
-            </h3>
-            <p class="text-gray-600">
-              نرحب بكم ونقدم خدماتكم لكل العقاريين في السعودية بشرط إثبات
-              التصنيف لشركتكم وان يكون لكم عدة مشاريع كبيرة قائمة لتقديم الطلب
-              على الايميل ............ او الاتصال
-            </p>
-          </div>
-        </div>
-      </div>
     </section>
     <!-- Features Section -->
     <section id="features" class="py-20 md:py-28">
-      <div class="container mx-auto px-4">
-        <div class="text-center mb-16">
-          <h2 class="text-3xl md:text-4xl font-bold mb-4 text-primary-800">
-            مميزات خدماتنا العقارية
-          </h2>
-          <div
-            class="w-24 h-1 bg-gradient-to-l from-gold-600 to-gold-500 mx-auto"
-          ></div>
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4 text-primary-800">مميزات خدماتنا العقارية</h2>
+                <div class="w-24 h-1 bg-gradient-to-l from-gold-600 to-gold-500 mx-auto"></div>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="bg-white p-8 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 animate-fade-up" style="animation-delay: 0.1s">
+                    <div class="w-16 h-16 bg-primary-100 text-primary-600 rounded-full flex items-center justify-center mb-6 mx-auto md:mx-0">
+                        <i class="fas fa-search-location text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3 text-center md:text-right">اختيار موقع استراتيجي</h3>
+                    <p class="text-gray-600 text-center md:text-right">نساعدك في اختيار أفضل المواقع الاستراتيجية للاستثمار العقاري بناءً على دراسات السوق والتوجهات المستقبلية.</p>
+                </div>
+                <div class="bg-white p-8 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 animate-fade-up" style="animation-delay: 0.2s">
+                    <div class="w-16 h-16 bg-primary-100 text-primary-600 rounded-full flex items-center justify-center mb-6 mx-auto md:mx-0">
+                        <i class="fas fa-chart-line text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3 text-center md:text-right">تحليل السوق العقاري</h3>
+                    <p class="text-gray-600 text-center md:text-right">نقدم تحليلات دقيقة لسوق العقارات السعودي لمساعدتك في اتخاذ قرارات استثمارية مدروسة ومربحة.</p>
+                </div>
+                <div class="bg-white p-8 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 animate-fade-up" style="animation-delay: 0.3s">
+                    <div class="w-16 h-16 bg-primary-100 text-primary-600 rounded-full flex items-center justify-center mb-6 mx-auto md:mx-0">
+                        <i class="fas fa-file-contract text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3 text-center md:text-right">استشارات قانونية</h3>
+                    <p class="text-gray-600 text-center md:text-right">نوفر استشارات قانونية متخصصة في مجال العقارات لضمان سلامة تعاملاتك وحماية استثماراتك.</p>
+                </div>
+                <div class="bg-white p-8 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 animate-fade-up" style="animation-delay: 0.4s">
+                    <div class="w-16 h-16 bg-primary-100 text-primary-600 rounded-full flex items-center justify-center mb-6 mx-auto md:mx-0">
+                        <i class="fas fa-hand-holding-usd text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3 text-center md:text-right">تمويل عقاري</h3>
+                    <p class="text-gray-600 text-center md:text-right">نساعدك في الحصول على أفضل خيارات التمويل العقاري المتاحة بما يتناسب مع احتياجاتك وإمكانياتك.</p>
+                </div>
+                <div class="bg-white p-8 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 animate-fade-up" style="animation-delay: 0.5s">
+                    <div class="w-16 h-16 bg-primary-100 text-primary-600 rounded-full flex items-center justify-center mb-6 mx-auto md:mx-0">
+                        <i class="fas fa-bullhorn text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3 text-center md:text-right">تسويق عقاري</h3>
+                    <p class="text-gray-600 text-center md:text-right">نقدم خدمات تسويقية احترافية لعقاراتك تضمن الوصول إلى الجمهور المستهدف وتحقيق أعلى عائد ممكن.</p>
+                </div>
+                <div class="bg-white p-8 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 animate-fade-up" style="animation-delay: 0.6s">
+                    <div class="w-16 h-16 bg-primary-100 text-primary-600 rounded-full flex items-center justify-center mb-6 mx-auto md:mx-0">
+                        <i class="fas fa-calculator text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3 text-center md:text-right">تقييم العقارات</h3>
+                    <p class="text-gray-600 text-center md:text-right">نوفر خدمات تقييم عقاري احترافية ودقيقة تساعدك في معرفة القيمة الحقيقية للعقارات قبل الشراء أو البيع.</p>
+                </div>
+            </div>
         </div>
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          <div
-            class="bg-white p-8 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 animate-fade-up"
-            style="animation-delay: 0.1s"
-          >
-            <div
-              class="w-16 h-16 bg-primary-100 text-primary-600 rounded-full flex items-center justify-center mb-6 mx-auto md:mx-0"
-            >
-              <i class="fas fa-search-location text-2xl"></i>
-            </div>
-            <h3 class="text-xl font-bold mb-3 text-center md:text-right">
-              اختيار موقع استراتيجي
-            </h3>
-            <p class="text-gray-600 text-center md:text-right">
-              نساعدك في اختيار أفضل المواقع الاستراتيجية للاستثمار العقاري بناءً
-              على دراسات السوق والتوجهات المستقبلية.
-            </p>
-          </div>
-          <div
-            class="bg-white p-8 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 animate-fade-up"
-            style="animation-delay: 0.2s"
-          >
-            <div
-              class="w-16 h-16 bg-primary-100 text-primary-600 rounded-full flex items-center justify-center mb-6 mx-auto md:mx-0"
-            >
-              <i class="fas fa-chart-line text-2xl"></i>
-            </div>
-            <h3 class="text-xl font-bold mb-3 text-center md:text-right">
-              تحليل السوق العقاري
-            </h3>
-            <p class="text-gray-600 text-center md:text-right">
-              نقدم تحليلات دقيقة لسوق العقارات السعودي لمساعدتك في اتخاذ قرارات
-              استثمارية مدروسة ومربحة.
-            </p>
-          </div>
-          <div
-            class="bg-white p-8 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 animate-fade-up"
-            style="animation-delay: 0.3s"
-          >
-            <div
-              class="w-16 h-16 bg-primary-100 text-primary-600 rounded-full flex items-center justify-center mb-6 mx-auto md:mx-0"
-            >
-              <i class="fas fa-file-contract text-2xl"></i>
-            </div>
-            <h3 class="text-xl font-bold mb-3 text-center md:text-right">
-              استشارات قانونية
-            </h3>
-            <p class="text-gray-600 text-center md:text-right">
-              نوفر استشارات قانونية متخصصة في مجال العقارات لضمان سلامة تعاملاتك
-              وحماية استثماراتك.
-            </p>
-          </div>
-          <div
-            class="bg-white p-8 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 animate-fade-up"
-            style="animation-delay: 0.4s"
-          >
-            <div
-              class="w-16 h-16 bg-primary-100 text-primary-600 rounded-full flex items-center justify-center mb-6 mx-auto md:mx-0"
-            >
-              <i class="fas fa-hand-holding-usd text-2xl"></i>
-            </div>
-            <h3 class="text-xl font-bold mb-3 text-center md:text-right">
-              تمويل عقاري
-            </h3>
-            <p class="text-gray-600 text-center md:text-right">
-              نساعدك في الحصول على أفضل خيارات التمويل العقاري المتاحة بما
-              يتناسب مع احتياجاتك وإمكانياتك.
-            </p>
-          </div>
-          <div
-            class="bg-white p-8 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 animate-fade-up"
-            style="animation-delay: 0.5s"
-          >
-            <div
-              class="w-16 h-16 bg-primary-100 text-primary-600 rounded-full flex items-center justify-center mb-6 mx-auto md:mx-0"
-            >
-              <i class="fas fa-bullhorn text-2xl"></i>
-            </div>
-            <h3 class="text-xl font-bold mb-3 text-center md:text-right">
-              تسويق عقاري
-            </h3>
-            <p class="text-gray-600 text-center md:text-right">
-              نقدم خدمات تسويقية احترافية لعقاراتك تضمن الوصول إلى الجمهور
-              المستهدف وتحقيق أعلى عائد ممكن.
-            </p>
-          </div>
-          <div
-            class="bg-white p-8 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 animate-fade-up"
-            style="animation-delay: 0.6s"
-          >
-            <div
-              class="w-16 h-16 bg-primary-100 text-primary-600 rounded-full flex items-center justify-center mb-6 mx-auto md:mx-0"
-            >
-              <i class="fas fa-calculator text-2xl"></i>
-            </div>
-            <h3 class="text-xl font-bold mb-3 text-center md:text-right">
-              تقييم العقارات
-            </h3>
-            <p class="text-gray-600 text-center md:text-right">
-              نوفر خدمات تقييم عقاري احترافية ودقيقة تساعدك في معرفة القيمة
-              الحقيقية للعقارات قبل الشراء أو البيع.
-            </p>
-          </div>
-        </div>
-      </div>
     </section>
 
     <!-- Services Section -->
     <section id="services" class="py-20 md:py-28 bg-gray-100">
-      <div class="container mx-auto px-4">
-        <div class="text-center mb-16">
-          <h2 class="text-3xl md:text-4xl font-bold mb-4 text-primary-800">
-            خدماتنا العقارية
-          </h2>
-          <div
-            class="w-24 h-1 bg-gradient-to-l from-gold-600 to-gold-500 mx-auto"
-          ></div>
-          <p class="mt-6 text-gray-600 max-w-2xl mx-auto">
-            نقدم مجموعة متكاملة من الخدمات العقارية المتميزة لتلبية احتياجاتك
-            الاستثمارية
-          </p>
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4 text-primary-800">خدماتنا العقارية</h2>
+                <div class="w-24 h-1 bg-gradient-to-l from-gold-600 to-gold-500 mx-auto"></div>
+                <p class="mt-6 text-gray-600 max-w-2xl mx-auto">نقدم مجموعة متكاملة من الخدمات العقارية المتميزة لتلبية احتياجاتك الاستثمارية</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="bg-white rounded-xl overflow-hidden shadow-lg group hover:shadow-xl transition-all duration-300">
+                    <div class="h-20 bg-primary-600 group-hover:bg-primary-700 transition-colors duration-300 flex items-center justify-center">
+                        <i class="fas fa-home text-4xl text-white"></i>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-3 text-primary-800">بيع وشراء العقارات</h3>
+                        <p class="text-gray-600">نساعدك في بيع أو شراء العقارات بأفضل الأسعار وأعلى مستويات الاحترافية.</p>
+                    </div>
+                </div>
+                <div class="bg-white rounded-xl overflow-hidden shadow-lg group hover:shadow-xl transition-all duration-300">
+                    <div class="h-20 bg-primary-600 group-hover:bg-primary-700 transition-colors duration-300 flex items-center justify-center">
+                        <i class="fas fa-key text-4xl text-white"></i>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-3 text-primary-800">تأجير العقارات</h3>
+                        <p class="text-gray-600">نوفر خدمات تأجير العقارات السكنية والتجارية بعقود آمنة وشروط مناسبة.</p>
+                    </div>
+                </div>
+                <div class="bg-white rounded-xl overflow-hidden shadow-lg group hover:shadow-xl transition-all duration-300">
+                    <div class="h-20 bg-primary-600 group-hover:bg-primary-700 transition-colors duration-300 flex items-center justify-center">
+                        <i class="fas fa-city text-4xl text-white"></i>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-3 text-primary-800">إدارة العقارات</h3>
+                        <p class="text-gray-600">نقدم خدمات إدارة العقارات الاحترافية لضمان الحفاظ على قيمة استثماراتك وتحقيق أعلى عائد ممكن.</p>
+                    </div>
+                </div>
+                <div class="bg-white rounded-xl overflow-hidden shadow-lg group hover:shadow-xl transition-all duration-300">
+                    <div class="h-20 bg-primary-600 group-hover:bg-primary-700 transition-colors duration-300 flex items-center justify-center">
+                        <i class="fas fa-map-marked-alt text-4xl text-white"></i>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-3 text-primary-800">تطوير الأراضي</h3>
+                        <p class="text-gray-600">نساعدك في تطوير الأراضي وتحويلها إلى مشاريع استثمارية ناجحة تحقق أعلى عائد ممكن.</p>
+                    </div>
+                </div>
+                <div class="bg-white rounded-xl overflow-hidden shadow-lg group hover:shadow-xl transition-all duration-300">
+                    <div class="h-20 bg-primary-600 group-hover:bg-primary-700 transition-colors duration-300 flex items-center justify-center">
+                        <i class="fas fa-clipboard-check text-4xl text-white"></i>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-3 text-primary-800">التقييم العقاري</h3>
+                        <p class="text-gray-600">نقدم خدمات تقييم عقاري احترافية ودقيقة معتمدة من الجهات المختصة.</p>
+                    </div>
+                </div>
+                <div class="bg-white rounded-xl overflow-hidden shadow-lg group hover:shadow-xl transition-all duration-300">
+                    <div class="h-20 bg-primary-600 group-hover:bg-primary-700 transition-colors duration-300 flex items-center justify-center">
+                        <i class="fas fa-handshake text-4xl text-white"></i>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-3 text-primary-800">الوساطة العقارية</h3>
+                        <p class="text-gray-600">نقدم خدمات وساطة عقارية احترافية تضمن إتمام الصفقات بشكل آمن وسريع.</p>
+                    </div>
+                </div>
+            </div>
         </div>
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-          <div
-            class="bg-white rounded-xl overflow-hidden shadow-lg group hover:shadow-xl transition-all duration-300"
-          >
-            <div
-              class="h-20 bg-primary-600 group-hover:bg-primary-700 transition-colors duration-300 flex items-center justify-center"
-            >
-              <i class="fas fa-home text-4xl text-white"></i>
-            </div>
-            <div class="p-6">
-              <h3 class="text-xl font-bold mb-3 text-primary-800">
-                بيع وشراء العقارات
-              </h3>
-              <p class="text-gray-600">
-                نساعدك في بيع أو شراء العقارات بأفضل الأسعار وأعلى مستويات
-                الاحترافية.
-              </p>
-            </div>
-          </div>
-          <div
-            class="bg-white rounded-xl overflow-hidden shadow-lg group hover:shadow-xl transition-all duration-300"
-          >
-            <div
-              class="h-20 bg-primary-600 group-hover:bg-primary-700 transition-colors duration-300 flex items-center justify-center"
-            >
-              <i class="fas fa-key text-4xl text-white"></i>
-            </div>
-            <div class="p-6">
-              <h3 class="text-xl font-bold mb-3 text-primary-800">
-                تأجير العقارات
-              </h3>
-              <p class="text-gray-600">
-                نوفر خدمات تأجير العقارات السكنية والتجارية بعقود آمنة وشروط
-                مناسبة.
-              </p>
-            </div>
-          </div>
-          <div
-            class="bg-white rounded-xl overflow-hidden shadow-lg group hover:shadow-xl transition-all duration-300"
-          >
-            <div
-              class="h-20 bg-primary-600 group-hover:bg-primary-700 transition-colors duration-300 flex items-center justify-center"
-            >
-              <i class="fas fa-city text-4xl text-white"></i>
-            </div>
-            <div class="p-6">
-              <h3 class="text-xl font-bold mb-3 text-primary-800">
-                إدارة العقارات
-              </h3>
-              <p class="text-gray-600">
-                نقدم خدمات إدارة العقارات الاحترافية لضمان الحفاظ على قيمة
-                استثماراتك وتحقيق أعلى عائد ممكن.
-              </p>
-            </div>
-          </div>
-          <div
-            class="bg-white rounded-xl overflow-hidden shadow-lg group hover:shadow-xl transition-all duration-300"
-          >
-            <div
-              class="h-20 bg-primary-600 group-hover:bg-primary-700 transition-colors duration-300 flex items-center justify-center"
-            >
-              <i class="fas fa-map-marked-alt text-4xl text-white"></i>
-            </div>
-            <div class="p-6">
-              <h3 class="text-xl font-bold mb-3 text-primary-800">
-                تطوير الأراضي
-              </h3>
-              <p class="text-gray-600">
-                نساعدك في تطوير الأراضي وتحويلها إلى مشاريع استثمارية ناجحة تحقق
-                أعلى عائد ممكن.
-              </p>
-            </div>
-          </div>
-          <div
-            class="bg-white rounded-xl overflow-hidden shadow-lg group hover:shadow-xl transition-all duration-300"
-          >
-            <div
-              class="h-20 bg-primary-600 group-hover:bg-primary-700 transition-colors duration-300 flex items-center justify-center"
-            >
-              <i class="fas fa-clipboard-check text-4xl text-white"></i>
-            </div>
-            <div class="p-6">
-              <h3 class="text-xl font-bold mb-3 text-primary-800">
-                التقييم العقاري
-              </h3>
-              <p class="text-gray-600">
-                نقدم خدمات تقييم عقاري احترافية ودقيقة معتمدة من الجهات المختصة.
-              </p>
-            </div>
-          </div>
-          <div
-            class="bg-white rounded-xl overflow-hidden shadow-lg group hover:shadow-xl transition-all duration-300"
-          >
-            <div
-              class="h-20 bg-primary-600 group-hover:bg-primary-700 transition-colors duration-300 flex items-center justify-center"
-            >
-              <i class="fas fa-handshake text-4xl text-white"></i>
-            </div>
-            <div class="p-6">
-              <h3 class="text-xl font-bold mb-3 text-primary-800">
-                الوساطة العقارية
-              </h3>
-              <p class="text-gray-600">
-                نقدم خدمات وساطة عقارية احترافية تضمن إتمام الصفقات بشكل آمن
-                وسريع.
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
     </section>
 
     <!-- Projects Section -->
     <section id="projects" class="py-20 md:py-28">
-      <div class="container mx-auto px-4">
-        <div class="text-center mb-16">
-          <h2 class="text-3xl md:text-4xl font-bold mb-4 text-primary-800">
-            مشاريعنا العقارية
-          </h2>
-          <div
-            class="w-24 h-1 bg-gradient-to-l from-gold-600 to-gold-500 mx-auto"
-          ></div>
-          <p class="mt-6 text-gray-600 max-w-2xl mx-auto">
-            نماذج من المشاريع العقارية المميزة التي قمنا بتنفيذها
-          </p>
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4 text-primary-800">مشاريعنا العقارية</h2>
+                <div class="w-24 h-1 bg-gradient-to-l from-gold-600 to-gold-500 mx-auto"></div>
+                <p class="mt-6 text-gray-600 max-w-2xl mx-auto">نماذج من المشاريع العقارية المميزة التي قمنا بتنفيذها</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="group relative overflow-hidden rounded-xl shadow-lg">
+                    <div class="h-64 bg-gradient-to-br from-primary-700 to-primary-900 flex flex-col items-center justify-center text-white">
+                        <i class="fas fa-home text-5xl mb-4"></i>
+                        <span class="text-xl font-bold">مشروع فلل فاخرة</span>
+                    </div>
+                    <div class="absolute inset-0 bg-primary-900/80 opacity-0 group-hover:opacity-100 flex items-center justify-center transition-all duration-300">
+                        <div class="text-white text-center p-6 transform translate-y-8 group-hover:translate-y-0 transition-transform duration-300">
+                            <h3 class="text-2xl font-bold mb-2">مشروع فلل فاخرة</h3>
+                            <p>مجمع سكني فاخر يضم 12 فيلا مستقلة في شمال الرياض</p>
+                            <button class="mt-4 px-6 py-2 bg-white text-primary-800 rounded-lg font-bold hover:bg-gray-100 transition-colors duration-300">عرض المشروع</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="group relative overflow-hidden rounded-xl shadow-lg">
+                    <div class="h-64 bg-gradient-to-br from-primary-700 to-primary-900 flex flex-col items-center justify-center text-white">
+                        <i class="fas fa-city text-5xl mb-4"></i>
+                        <span class="text-xl font-bold">برج سكني</span>
+                    </div>
+                    <div class="absolute inset-0 bg-primary-900/80 opacity-0 group-hover:opacity-100 flex items-center justify-center transition-all duration-300">
+                        <div class="text-white text-center p-6 transform translate-y-8 group-hover:translate-y-0 transition-transform duration-300">
+                            <h3 class="text-2xl font-bold mb-2">برج سكني</h3>
+                            <p>برج سكني فاخر يضم 120 وحدة سكنية في وسط مدينة جدة</p>
+                            <button class="mt-4 px-6 py-2 bg-white text-primary-800 rounded-lg font-bold hover:bg-gray-100 transition-colors duration-300">عرض المشروع</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="group relative overflow-hidden rounded-xl shadow-lg">
+                    <div class="h-64 bg-gradient-to-br from-primary-700 to-primary-900 flex flex-col items-center justify-center text-white">
+                        <i class="fas fa-hotel text-5xl mb-4"></i>
+                        <span class="text-xl font-bold">منتجع سياحي</span>
+                    </div>
+                    <div class="absolute inset-0 bg-primary-900/80 opacity-0 group-hover:opacity-100 flex items-center justify-center transition-all duration-300">
+                        <div class="text-white text-center p-6 transform translate-y-8 group-hover:translate-y-0 transition-transform duration-300">
+                            <h3 class="text-2xl font-bold mb-2">منتجع سياحي</h3>
+                            <p>منتجع سياحي فاخر على ساحل البحر الأحمر</p>
+                            <button class="mt-4 px-6 py-2 bg-white text-primary-800 rounded-lg font-bold hover:bg-gray-100 transition-colors duration-300">عرض المشروع</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="group relative overflow-hidden rounded-xl shadow-lg">
+                    <div class="h-64 bg-gradient-to-br from-primary-700 to-primary-900 flex flex-col items-center justify-center text-white">
+                        <i class="fas fa-store text-5xl mb-4"></i>
+                        <span class="text-xl font-bold">مجمع تجاري</span>
+                    </div>
+                    <div class="absolute inset-0 bg-primary-900/80 opacity-0 group-hover:opacity-100 flex items-center justify-center transition-all duration-300">
+                        <div class="text-white text-center p-6 transform translate-y-8 group-hover:translate-y-0 transition-transform duration-300">
+                            <h3 class="text-2xl font-bold mb-2">مجمع تجاري</h3>
+                            <p>مجمع تجاري استثماري في المنطقة الشرقية</p>
+                            <button class="mt-4 px-6 py-2 bg-white text-primary-800 rounded-lg font-bold hover:bg-gray-100 transition-colors duration-300">عرض المشروع</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="group relative overflow-hidden rounded-xl shadow-lg">
+                    <div class="h-64 bg-gradient-to-br from-primary-700 to-primary-900 flex flex-col items-center justify-center text-white">
+                        <i class="fas fa-map-marked-alt text-5xl mb-4"></i>
+                        <span class="text-xl font-bold">أراضي استثمارية</span>
+                    </div>
+                    <div class="absolute inset-0 bg-primary-900/80 opacity-0 group-hover:opacity-100 flex items-center justify-center transition-all duration-300">
+                        <div class="text-white text-center p-6 transform translate-y-8 group-hover:translate-y-0 transition-transform duration-300">
+                            <h3 class="text-2xl font-bold mb-2">أراضي استثمارية</h3>
+                            <p>مشروع أراضي استثمارية في ضواحي المدينة المنورة</p>
+                            <button class="mt-4 px-6 py-2 bg-white text-primary-800 rounded-lg font-bold hover:bg-gray-100 transition-colors duration-300">عرض المشروع</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="group relative overflow-hidden rounded-xl shadow-lg">
+                    <div class="h-64 bg-gradient-to-br from-primary-700 to-primary-900 flex flex-col items-center justify-center text-white">
+                        <i class="fas fa-building text-5xl mb-4"></i>
+                        <span class="text-xl font-bold">مكاتب إدارية</span>
+                    </div>
+                    <div class="absolute inset-0 bg-primary-900/80 opacity-0 group-hover:opacity-100 flex items-center justify-center transition-all duration-300">
+                        <div class="text-white text-center p-6 transform translate-y-8 group-hover:translate-y-0 transition-transform duration-300">
+                            <h3 class="text-2xl font-bold mb-2">مكاتب إدارية</h3>
+                            <p>برج مكاتب إدارية في المنطقة المالية بالرياض</p>
+                            <button class="mt-4 px-6 py-2 bg-white text-primary-800 rounded-lg font-bold hover:bg-gray-100 transition-colors duration-300">عرض المشروع</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          <div class="group relative overflow-hidden rounded-xl shadow-lg">
-            <div
-              class="h-64 bg-gradient-to-br from-primary-700 to-primary-900 flex flex-col items-center justify-center text-white"
-            >
-              <i class="fas fa-home text-5xl mb-4"></i>
-              <span class="text-xl font-bold">مشروع فلل فاخرة</span>
-            </div>
-            <div
-              class="absolute inset-0 bg-primary-900/80 opacity-0 group-hover:opacity-100 flex items-center justify-center transition-all duration-300"
-            >
-              <div
-                class="text-white text-center p-6 transform translate-y-8 group-hover:translate-y-0 transition-transform duration-300"
-              >
-                <h3 class="text-2xl font-bold mb-2">مشروع فلل فاخرة</h3>
-                <p>مجمع سكني فاخر يضم 12 فيلا مستقلة في شمال الرياض</p>
-                <button
-                  class="mt-4 px-6 py-2 bg-white text-primary-800 rounded-lg font-bold hover:bg-gray-100 transition-colors duration-300"
-                >
-                  عرض المشروع
-                </button>
-              </div>
-            </div>
-          </div>
-          <div class="group relative overflow-hidden rounded-xl shadow-lg">
-            <div
-              class="h-64 bg-gradient-to-br from-primary-700 to-primary-900 flex flex-col items-center justify-center text-white"
-            >
-              <i class="fas fa-city text-5xl mb-4"></i>
-              <span class="text-xl font-bold">برج سكني</span>
-            </div>
-            <div
-              class="absolute inset-0 bg-primary-900/80 opacity-0 group-hover:opacity-100 flex items-center justify-center transition-all duration-300"
-            >
-              <div
-                class="text-white text-center p-6 transform translate-y-8 group-hover:translate-y-0 transition-transform duration-300"
-              >
-                <h3 class="text-2xl font-bold mb-2">برج سكني</h3>
-                <p>برج سكني فاخر يضم 120 وحدة سكنية في وسط مدينة جدة</p>
-                <button
-                  class="mt-4 px-6 py-2 bg-white text-primary-800 rounded-lg font-bold hover:bg-gray-100 transition-colors duration-300"
-                >
-                  عرض المشروع
-                </button>
-              </div>
-            </div>
-          </div>
-          <div class="group relative overflow-hidden rounded-xl shadow-lg">
-            <div
-              class="h-64 bg-gradient-to-br from-primary-700 to-primary-900 flex flex-col items-center justify-center text-white"
-            >
-              <i class="fas fa-hotel text-5xl mb-4"></i>
-              <span class="text-xl font-bold">منتجع سياحي</span>
-            </div>
-            <div
-              class="absolute inset-0 bg-primary-900/80 opacity-0 group-hover:opacity-100 flex items-center justify-center transition-all duration-300"
-            >
-              <div
-                class="text-white text-center p-6 transform translate-y-8 group-hover:translate-y-0 transition-transform duration-300"
-              >
-                <h3 class="text-2xl font-bold mb-2">منتجع سياحي</h3>
-                <p>منتجع سياحي فاخر على ساحل البحر الأحمر</p>
-                <button
-                  class="mt-4 px-6 py-2 bg-white text-primary-800 rounded-lg font-bold hover:bg-gray-100 transition-colors duration-300"
-                >
-                  عرض المشروع
-                </button>
-              </div>
-            </div>
-          </div>
-          <div class="group relative overflow-hidden rounded-xl shadow-lg">
-            <div
-              class="h-64 bg-gradient-to-br from-primary-700 to-primary-900 flex flex-col items-center justify-center text-white"
-            >
-              <i class="fas fa-store text-5xl mb-4"></i>
-              <span class="text-xl font-bold">مجمع تجاري</span>
-            </div>
-            <div
-              class="absolute inset-0 bg-primary-900/80 opacity-0 group-hover:opacity-100 flex items-center justify-center transition-all duration-300"
-            >
-              <div
-                class="text-white text-center p-6 transform translate-y-8 group-hover:translate-y-0 transition-transform duration-300"
-              >
-                <h3 class="text-2xl font-bold mb-2">مجمع تجاري</h3>
-                <p>مجمع تجاري استثماري في المنطقة الشرقية</p>
-                <button
-                  class="mt-4 px-6 py-2 bg-white text-primary-800 rounded-lg font-bold hover:bg-gray-100 transition-colors duration-300"
-                >
-                  عرض المشروع
-                </button>
-              </div>
-            </div>
-          </div>
-          <div class="group relative overflow-hidden rounded-xl shadow-lg">
-            <div
-              class="h-64 bg-gradient-to-br from-primary-700 to-primary-900 flex flex-col items-center justify-center text-white"
-            >
-              <i class="fas fa-map-marked-alt text-5xl mb-4"></i>
-              <span class="text-xl font-bold">أراضي استثمارية</span>
-            </div>
-            <div
-              class="absolute inset-0 bg-primary-900/80 opacity-0 group-hover:opacity-100 flex items-center justify-center transition-all duration-300"
-            >
-              <div
-                class="text-white text-center p-6 transform translate-y-8 group-hover:translate-y-0 transition-transform duration-300"
-              >
-                <h3 class="text-2xl font-bold mb-2">أراضي استثمارية</h3>
-                <p>مشروع أراضي استثمارية في ضواحي المدينة المنورة</p>
-                <button
-                  class="mt-4 px-6 py-2 bg-white text-primary-800 rounded-lg font-bold hover:bg-gray-100 transition-colors duration-300"
-                >
-                  عرض المشروع
-                </button>
-              </div>
-            </div>
-          </div>
-          <div class="group relative overflow-hidden rounded-xl shadow-lg">
-            <div
-              class="h-64 bg-gradient-to-br from-primary-700 to-primary-900 flex flex-col items-center justify-center text-white"
-            >
-              <i class="fas fa-building text-5xl mb-4"></i>
-              <span class="text-xl font-bold">مكاتب إدارية</span>
-            </div>
-            <div
-              class="absolute inset-0 bg-primary-900/80 opacity-0 group-hover:opacity-100 flex items-center justify-center transition-all duration-300"
-            >
-              <div
-                class="text-white text-center p-6 transform translate-y-8 group-hover:translate-y-0 transition-transform duration-300"
-              >
-                <h3 class="text-2xl font-bold mb-2">مكاتب إدارية</h3>
-                <p>برج مكاتب إدارية في المنطقة المالية بالرياض</p>
-                <button
-                  class="mt-4 px-6 py-2 bg-white text-primary-800 rounded-lg font-bold hover:bg-gray-100 transition-colors duration-300"
-                >
-                  عرض المشروع
-                </button>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
     </section>
 
     <!-- Call to Action Section -->
-    <section
-      class="py-20 md:py-28 bg-gradient-to-r from-primary-800 to-primary-600 text-white"
-    >
-      <div class="container mx-auto px-4 text-center">
-        <h2 class="text-3xl md:text-4xl font-bold mb-6">
-          استثمر في مستقبلك العقاري
-        </h2>
-        <p class="text-lg md:text-xl max-w-3xl mx-auto mb-10 opacity-90">
-          نحن نساعدك في اتخاذ القرار الاستثماري الصحيح في سوق العقارات السعودي.
-          تواصل معنا اليوم للحصول على استشارة عقارية مجانية.
-        </p>
-        <div class="flex flex-col md:flex-row gap-4 justify-center">
-          <a
-            href="#contact"
-            class="bg-white text-primary-800 hover:bg-gray-100 font-bold py-3 px-8 rounded-lg shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300"
-            >احصل على استشارة مجانية</a
-          >
-          <a
-            href="#projects"
-            class="bg-transparent border-2 border-white text-white hover:bg-white/10 font-bold py-3 px-8 rounded-lg shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300"
-            >مشاهدة مشاريعنا</a
-          >
+    <section class="py-20 md:py-28 bg-gradient-to-r from-primary-800 to-primary-600 text-white">
+        <div class="container mx-auto px-4 text-center">
+            <h2 class="text-3xl md:text-4xl font-bold mb-6">استثمر في مستقبلك العقاري</h2>
+            <p class="text-lg md:text-xl max-w-3xl mx-auto mb-10 opacity-90">نحن نساعدك في اتخاذ القرار الاستثماري الصحيح في سوق العقارات السعودي. تواصل معنا اليوم للحصول على استشارة عقارية مجانية.</p>
+            <div class="flex flex-col md:flex-row gap-4 justify-center">
+                <a href="#contact" class="bg-white text-primary-800 hover:bg-gray-100 font-bold py-3 px-8 rounded-lg shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300">احصل على استشارة مجانية</a>
+                <a href="#projects" class="bg-transparent border-2 border-white text-white hover:bg-white/10 font-bold py-3 px-8 rounded-lg shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300">مشاهدة مشاريعنا</a>
+            </div>
         </div>
-      </div>
     </section>
+
+
+ 
 
     <!-- Contact Section -->
     <section id="contact" class="py-20 md:py-28 bg-gray-100">
-      <div class="container mx-auto px-4">
-        <div class="text-center mb-16">
-          <h2 class="text-3xl md:text-4xl font-bold mb-4 text-primary-800">
-            تواصل معنا
-          </h2>
-          <div
-            class="w-24 h-1 bg-gradient-to-l from-gold-600 to-gold-500 mx-auto"
-          ></div>
-          <p class="mt-6 text-gray-600 max-w-2xl mx-auto">
-            نحن هنا للإجابة على استفساراتك وتقديم المساعدة في كل ما يتعلق
-            بخدماتنا العقارية
-          </p>
-        </div>
-        <div class="flex flex-col lg:flex-row gap-12">
-          <div class="lg:w-1/2 bg-white rounded-xl shadow-lg p-8">
-            <h3 class="text-2xl font-bold mb-6 text-primary-800">
-              أرسل رسالتك
-            </h3>
-            <form>
-              <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
-                <div>
-                  <label class="block text-gray-700 font-medium mb-2" for="name"
-                    >الاسم</label
-                  >
-                  <input
-                    type="text"
-                    id="name"
-                    class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent"
-                    placeholder="أدخل اسمك الكامل"
-                  />
-                </div>
-                <div>
-                  <label
-                    class="block text-gray-700 font-medium mb-2"
-                    for="email"
-                    >البريد الإلكتروني</label
-                  >
-                  <input
-                    type="email"
-                    id="email"
-                    class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent"
-                    placeholder="أدخل بريدك الإلكتروني"
-                  />
-                </div>
-              </div>
-              <div class="mb-6">
-                <label class="block text-gray-700 font-medium mb-2" for="phone"
-                  >رقم الهاتف</label
-                >
-                <input
-                  type="tel"
-                  id="phone"
-                  class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent"
-                  placeholder="أدخل رقم هاتفك"
-                />
-              </div>
-              <div class="mb-6">
-                <label
-                  class="block text-gray-700 font-medium mb-2"
-                  for="service"
-                  >الخدمة المطلوبة</label
-                >
-                <select
-                  id="service"
-                  class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent"
-                >
-                  <option value="">اختر الخدمة</option>
-                  <option value="buy">شراء عقار</option>
-                  <option value="sell">بيع عقار</option>
-                  <option value="rent">تأجير عقار</option>
-                  <option value="invest">استثمار عقاري</option>
-                  <option value="consult">استشارة عقارية</option>
-                  <option value="other">خدمة أخرى</option>
-                </select>
-              </div>
-              <div class="mb-6">
-                <label
-                  class="block text-gray-700 font-medium mb-2"
-                  for="message"
-                  >الرسالة</label
-                >
-                <textarea
-                  id="message"
-                  rows="5"
-                  class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent"
-                  placeholder="اكتب رسالتك هنا"
-                ></textarea>
-              </div>
-              <button
-                type="submit"
-                class="w-full bg-gradient-to-l from-gold-600 to-gold-500 hover:from-gold-700 hover:to-gold-600 text-white font-bold py-3 px-6 rounded-lg shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300"
-              >
-                إرسال الطلب
-              </button>
-            </form>
-          </div>
-          <div class="lg:w-1/2">
-            <div class="bg-white rounded-xl shadow-lg p-8 mb-8">
-              <h3 class="text-2xl font-bold mb-6 text-primary-800">
-                معلومات التواصل
-              </h3>
-              <div class="space-y-6">
-                <div class="flex items-start">
-                  <div
-                    class="w-12 h-12 bg-primary-100 rounded-full flex items-center justify-center text-primary-600 text-xl ml-4"
-                  >
-                    <i class="fas fa-envelope"></i>
-                  </div>
-                  <div>
-                    <h4 class="font-bold text-gray-700">البريد الإلكتروني</h4>
-                    <p class="text-gray-600">info@example.com</p>
-                  </div>
-                </div>
-                <div class="flex items-start">
-                  <div
-                    class="w-12 h-12 bg-primary-100 rounded-full flex items-center justify-center text-primary-600 text-xl ml-4"
-                  >
-                    <i class="fas fa-phone"></i>
-                  </div>
-                  <div>
-                    <h4 class="font-bold text-gray-700">الهاتف</h4>
-                    <p class="text-gray-600">+966 XX XXX XXXX</p>
-                  </div>
-                </div>
-                <div class="flex items-start">
-                  <div
-                    class="w-12 h-12 bg-primary-100 rounded-full flex items-center justify-center text-primary-600 text-xl ml-4"
-                  >
-                    <i class="fas fa-map-marker-alt"></i>
-                  </div>
-                  <div>
-                    <h4 class="font-bold text-gray-700">العنوان</h4>
-                    <p class="text-gray-600">المملكة العربية السعودية</p>
-                  </div>
-                </div>
-              </div>
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4 text-primary-800">تواصل معنا</h2>
+                <div class="w-24 h-1 bg-gradient-to-l from-gold-600 to-gold-500 mx-auto"></div>
+                <p class="mt-6 text-gray-600 max-w-2xl mx-auto">نحن هنا للإجابة على استفساراتك وتقديم المساعدة في كل ما يتعلق بخدماتنا العقارية</p>
             </div>
-            <div class="bg-white rounded-xl shadow-lg p-8">
-              <h3 class="text-2xl font-bold mb-6 text-primary-800">
-                تابعنا على
-              </h3>
-              <div class="flex space-x-4 space-x-reverse">
-                <a
-                  href="#"
-                  class="w-12 h-12 bg-blue-600 hover:bg-blue-700 rounded-full flex items-center justify-center text-white text-xl transition-colors duration-300"
-                >
-                  <i class="fab fa-facebook-f"></i>
-                </a>
-                <a
-                  href="#"
-                  class="w-12 h-12 bg-sky-500 hover:bg-sky-600 rounded-full flex items-center justify-center text-white text-xl transition-colors duration-300"
-                >
-                  <i class="fab fa-twitter"></i>
-                </a>
-                <a
-                  href="#"
-                  class="w-12 h-12 bg-pink-600 hover:bg-pink-700 rounded-full flex items-center justify-center text-white text-xl transition-colors duration-300"
-                >
-                  <i class="fab fa-instagram"></i>
-                </a>
-                <a
-                  href="#"
-                  class="w-12 h-12 bg-blue-800 hover:bg-blue-900 rounded-full flex items-center justify-center text-white text-xl transition-colors duration-300"
-                >
-                  <i class="fab fa-linkedin-in"></i>
-                </a>
-                <a
-                  href="#"
-                  class="w-12 h-12 bg-yellow-400 hover:bg-yellow-500 rounded-full flex items-center justify-center text-white text-xl transition-colors duration-300"
-                >
-                  <i class="fab fa-snapchat-ghost"></i>
-                </a>
-              </div>
+            <div class="flex flex-col lg:flex-row gap-12">
+                <div class="lg:w-1/2 bg-white rounded-xl shadow-lg p-8">
+                    <h3 class="text-2xl font-bold mb-6 text-primary-800">أرسل رسالتك</h3>
+                    <form>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+                            <div>
+                                <label class="block text-gray-700 font-medium mb-2" for="name">الاسم</label>
+                                <input type="text" id="name" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent" placeholder="أدخل اسمك الكامل">
+                            </div>
+                            <div>
+                                <label class="block text-gray-700 font-medium mb-2" for="email">البريد الإلكتروني</label>
+                                <input type="email" id="email" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent" placeholder="أدخل بريدك الإلكتروني">
+                            </div>
+                        </div>
+                        <div class="mb-6">
+                            <label class="block text-gray-700 font-medium mb-2" for="phone">رقم الهاتف</label>
+                            <input type="tel" id="phone" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent" placeholder="أدخل رقم هاتفك">
+                        </div>
+                        <div class="mb-6">
+                            <label class="block text-gray-700 font-medium mb-2" for="service">الخدمة المطلوبة</label>
+                            <select id="service" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent">
+                                <option value="">اختر الخدمة</option>
+                                <option value="buy">شراء عقار</option>
+                                <option value="sell">بيع عقار</option>
+                                <option value="rent">تأجير عقار</option>
+                                <option value="invest">استثمار عقاري</option>
+                                <option value="consult">استشارة عقارية</option>
+                                <option value="other">خدمة أخرى</option>
+                            </select>
+                        </div>
+                        <div class="mb-6">
+                            <label class="block text-gray-700 font-medium mb-2" for="message">الرسالة</label>
+                            <textarea id="message" rows="5" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent" placeholder="اكتب رسالتك هنا"></textarea>
+                        </div>
+                        <button type="submit" class="w-full bg-gradient-to-l from-gold-600 to-gold-500 hover:from-gold-700 hover:to-gold-600 text-white font-bold py-3 px-6 rounded-lg shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300">إرسال الطلب</button>
+                    </form>
+                </div>
+                <div class="lg:w-1/2">
+                    <div class="bg-white rounded-xl shadow-lg p-8 mb-8">
+                        <h3 class="text-2xl font-bold mb-6 text-primary-800">معلومات التواصل</h3>
+                        <div class="space-y-6">
+                            <div class="flex items-start">
+                                <div class="w-12 h-12 bg-primary-100 rounded-full flex items-center justify-center text-primary-600 text-xl ml-4">
+                                    <i class="fas fa-envelope"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-gray-700">البريد الإلكتروني</h4>
+                                    <p class="text-gray-600">info@example.com</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start">
+                                <div class="w-12 h-12 bg-primary-100 rounded-full flex items-center justify-center text-primary-600 text-xl ml-4">
+                                    <i class="fas fa-phone"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-gray-700">الهاتف</h4>
+                                    <p class="text-gray-600">+966 XX XXX XXXX</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start">
+                                <div class="w-12 h-12 bg-primary-100 rounded-full flex items-center justify-center text-primary-600 text-xl ml-4">
+                                    <i class="fas fa-map-marker-alt"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-gray-700">العنوان</h4>
+                                    <p class="text-gray-600">المملكة العربية السعودية</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="bg-white rounded-xl shadow-lg p-8">
+                        <h3 class="text-2xl font-bold mb-6 text-primary-800">تابعنا على</h3>
+                        <div class="flex space-x-4 space-x-reverse">
+                            <a href="#" class="w-12 h-12 bg-blue-600 hover:bg-blue-700 rounded-full flex items-center justify-center text-white text-xl transition-colors duration-300">
+                                <i class="fab fa-facebook-f"></i>
+                            </a>
+                            <a href="#" class="w-12 h-12 bg-sky-500 hover:bg-sky-600 rounded-full flex items-center justify-center text-white text-xl transition-colors duration-300">
+                                <i class="fab fa-twitter"></i>
+                            </a>
+                            <a href="#" class="w-12 h-12 bg-pink-600 hover:bg-pink-700 rounded-full flex items-center justify-center text-white text-xl transition-colors duration-300">
+                                <i class="fab fa-instagram"></i>
+                            </a>
+                            <a href="#" class="w-12 h-12 bg-blue-800 hover:bg-blue-900 rounded-full flex items-center justify-center text-white text-xl transition-colors duration-300">
+                                <i class="fab fa-linkedin-in"></i>
+                            </a>
+                            <a href="#" class="w-12 h-12 bg-yellow-400 hover:bg-yellow-500 rounded-full flex items-center justify-center text-white text-xl transition-colors duration-300">
+                                <i class="fab fa-snapchat-ghost"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
             </div>
-          </div>
         </div>
-      </div>
     </section>
 
     <!-- Floating CTA -->
     <div class="fixed bottom-8 left-8 z-50">
-      <a
-        href="#contact"
-        class="flex items-center bg-gradient-to-l from-gold-600 to-gold-500 hover:from-gold-700 hover:to-gold-600 text-white font-bold py-3 px-6 rounded-full shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300"
-      >
-        <i class="fas fa-headset text-xl ml-2"></i>
-        <span>تواصل معنا</span>
-      </a>
+        <a href="#contact" class="flex items-center bg-gradient-to-l from-gold-600 to-gold-500 hover:from-gold-700 hover:to-gold-600 text-white font-bold py-3 px-6 rounded-full shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300">
+            <i class="fas fa-headset text-xl ml-2"></i>
+            <span>تواصل معنا</span>
+        </a>
     </div>
 
     <!-- Footer -->
     <footer class="bg-gray-900 text-white">
-      <div class="container mx-auto px-4 py-16">
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
-          <div>
-            <h3 class="text-2xl font-bold mb-6">المسار العقاري المميز</h3>
-            <p class="text-gray-400 mb-6">
-              نقدم خدمات عقارية متكاملة في المملكة العربية السعودية، بهدف تعزيز
-              استثماراتك العقارية وزيادة فرص النجاح في سوق العقارات التنافسي.
-            </p>
-          </div>
-          <div>
-            <h3 class="text-xl font-bold mb-6">روابط سريعة</h3>
-            <ul class="space-y-3">
-              <li>
-                <a
-                  href="#hero"
-                  class="text-gray-400 hover:text-white transition-colors duration-300"
-                  >الرئيسية</a
-                >
-              </li>
-              <li>
-                <a
-                  href="#about"
-                  class="text-gray-400 hover:text-white transition-colors duration-300"
-                  >من نحن</a
-                >
-              </li>
-              <li>
-                <a
-                  href="#features"
-                  class="text-gray-400 hover:text-white transition-colors duration-300"
-                  >المميزات</a
-                >
-              </li>
-              <li>
-                <a
-                  href="#services"
-                  class="text-gray-400 hover:text-white transition-colors duration-300"
-                  >الخدمات</a
-                >
-              </li>
-              <li>
-                <a
-                  href="#projects"
-                  class="text-gray-400 hover:text-white transition-colors duration-300"
-                  >مشاريعنا</a
-                >
-              </li>
-              <li>
-                <a
-                  href="#contact"
-                  class="text-gray-400 hover:text-white transition-colors duration-300"
-                  >اتصل بنا</a
-                >
-              </li>
-            </ul>
-          </div>
-          <div>
-            <h3 class="text-xl font-bold mb-6">خدماتنا</h3>
-            <ul class="space-y-3">
-              <li class="text-gray-400">بيع وشراء العقارات</li>
-              <li class="text-gray-400">تأجير العقارات</li>
-              <li class="text-gray-400">إدارة العقارات</li>
-              <li class="text-gray-400">تطوير الأراضي</li>
-              <li class="text-gray-400">التقييم العقاري</li>
-              <li class="text-gray-400">الوساطة العقارية</li>
-            </ul>
-          </div>
-          <div>
-            <h3 class="text-xl font-bold mb-6">النشرة البريدية</h3>
-            <p class="text-gray-400 mb-4">
-              اشترك في نشرتنا البريدية للحصول على آخر الأخبار والعروض
-            </p>
-            <form class="flex flex-col sm:flex-row gap-2">
-              <input
-                type="email"
-                placeholder="البريد الإلكتروني"
-                class="px-4 py-2 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-500 text-gray-800"
-              />
-              <button
-                type="submit"
-                class="bg-gradient-to-l from-gold-600 to-gold-500 hover:from-gold-700 hover:to-gold-600 text-white font-bold py-2 px-4 rounded-lg transition-colors duration-300"
-              >
-                اشتراك
-              </button>
-            </form>
-          </div>
+        <div class="container mx-auto px-4 py-16">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
+                <div>
+                    <h3 class="text-2xl font-bold mb-6">المسار العقاري المميز</h3>
+                    <p class="text-gray-400 mb-6">نقدم خدمات عقارية متكاملة في المملكة العربية السعودية، بهدف تعزيز استثماراتك العقارية وزيادة فرص النجاح في سوق العقارات التنافسي.</p>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold mb-6">روابط سريعة</h3>
+                    <ul class="space-y-3">
+                        <li><a href="#hero" class="text-gray-400 hover:text-white transition-colors duration-300">الرئيسية</a></li>
+                        <li><a href="#about" class="text-gray-400 hover:text-white transition-colors duration-300">من نحن</a></li>
+                        <li><a href="#features" class="text-gray-400 hover:text-white transition-colors duration-300">المميزات</a></li>
+                        <li><a href="#services" class="text-gray-400 hover:text-white transition-colors duration-300">الخدمات</a></li>
+                        <li><a href="#projects" class="text-gray-400 hover:text-white transition-colors duration-300">مشاريعنا</a></li>
+                        <li><a href="#contact" class="text-gray-400 hover:text-white transition-colors duration-300">اتصل بنا</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold mb-6">خدماتنا</h3>
+                    <ul class="space-y-3">
+                        <li class="text-gray-400">بيع وشراء العقارات</li>
+                        <li class="text-gray-400">تأجير العقارات</li>
+                        <li class="text-gray-400">إدارة العقارات</li>
+                        <li class="text-gray-400">تطوير الأراضي</li>
+                        <li class="text-gray-400">التقييم العقاري</li>
+                        <li class="text-gray-400">الوساطة العقارية</li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold mb-6">النشرة البريدية</h3>
+                    <p class="text-gray-400 mb-4">اشترك في نشرتنا البريدية للحصول على آخر الأخبار والعروض</p>
+                    <form class="flex flex-col sm:flex-row gap-2">
+                        <input type="email" placeholder="البريد الإلكتروني" class="px-4 py-2 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-500 text-gray-800">
+                        <button type="submit" class="bg-gradient-to-l from-gold-600 to-gold-500 hover:from-gold-700 hover:to-gold-600 text-white font-bold py-2 px-4 rounded-lg transition-colors duration-300">اشتراك</button>
+                    </form>
+                </div>
+            </div>
         </div>
-      </div>
-      <div class="border-t border-gray-800 py-6">
-        <div class="container mx-auto px-4 text-center">
-          <p class="text-gray-400">
-            جميع الحقوق محفوظة &copy; 2025 المسار العقاري المميز
-          </p>
+        <div class="border-t border-gray-800 py-6">
+            <div class="container mx-auto px-4 text-center">
+                <p class="text-gray-400">جميع الحقوق محفوظة &copy; 2025 المسار العقاري المميز</p>
+            </div>
         </div>
-      </div>
     </footer>
 
     <!-- Mobile Menu Toggle Script -->
     <script>
-      document.addEventListener("DOMContentLoaded", function () {
-        const menuToggle = document.getElementById("menu-toggle");
-        const mobileMenu = document.getElementById("mobile-menu");
-
-        menuToggle.addEventListener("click", function () {
-          mobileMenu.classList.toggle("active");
-
-          if (mobileMenu.classList.contains("active")) {
-            menuToggle.innerHTML = '<i class="fas fa-times"></i>';
-          } else {
-            menuToggle.innerHTML = '<i class="fas fa-bars"></i>';
-          }
+        document.addEventListener('DOMContentLoaded', function() {
+            const menuToggle = document.getElementById('menu-toggle');
+            const mobileMenu = document.getElementById('mobile-menu');
+            
+            menuToggle.addEventListener('click', function() {
+                mobileMenu.classList.toggle('active');
+                
+                if (mobileMenu.classList.contains('active')) {
+                    menuToggle.innerHTML = '<i class="fas fa-times"></i>';
+                } else {
+                    menuToggle.innerHTML = '<i class="fas fa-bars"></i>';
+                }
+            });
         });
-      });
     </script>
-  </body>
+</body>
 </html>
