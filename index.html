@@ -19,23 +19,14 @@
                     colors: {
                         primary: {
                             100: '#E8F1E4',
-          200: '#D2E3C8',
-          300: '#BBD6AC',
-          400: '#A5C990',
-          500: '#87A97F', // اللون الأساسي من اللوجو
-          600: '#6D8A68',
-          700: '#536C51',
-          800: '#394D3A',
-          900: '#1F2F23',
-        //                     100: '#FDF6EC', 
-        //   200: '#FAEBD7', 
-        //   300: '#F5E4C3', 
-        //   400: '#EED6A7',
-        //   500: '#DCC9A0',
-        //   600: '#CBB891', 
-        //   700: '#B5A177', 
-        //   800: '#9E8B61', 
-        //   900: '#7C6B4F'
+                            200: '#D2E3C8',
+                            300: '#BBD6AC',
+                            400: '#A5C990',
+                            500: '#87A97F', // اللون الأساسي من اللوجو
+                            600: '#6D8A68',
+                            700: '#536C51',
+                            800: '#394D3A',
+                            900: '#1F2F23',
                         },
                         secondary: {
                             50: '#fdf2f8',
@@ -50,25 +41,15 @@
                             900: '#831843',
                         },
                         gold: {
-                            // 100: '#FEF9C3',
-                            // 200: '#FEF08A',
-                            // 300: '#FDE047',
-                            // 400: '#FACC15',
-                            // 500: '#EAB308',
-                            // 600: '#CA8A04',
-                            // 700: '#A16207',
-                            // 800: '#854D0E',
-                            // 900: '#713F12',
                             100: '#0a0a0a', 
-          200: '#0a0a0a', 
-          300: '#0a0a0a', 
-          400: '#0a0a0a', 
-          500: '#0a0a0a', 
-          600: '#0a0a0a', 
-          700: '#0a0a0a', 
-          800: '#0a0a0a', 
-          900: '#0a0a0a', 
-                            
+                            200: '#0a0a0a', 
+                            300: '#0a0a0a', 
+                            400: '#0a0a0a', 
+                            500: '#0a0a0a', 
+                            600: '#0a0a0a', 
+                            700: '#0a0a0a', 
+                            800: '#0a0a0a', 
+                            900: '#0a0a0a', 
                         },
                         dark: '#1e293b',
                     },
@@ -113,7 +94,6 @@
             overflow: hidden;
         }
         
-        
         .nav-link {
             position: relative;
         }
@@ -138,6 +118,57 @@
         .mobile-menu.active {
             max-height: 500px;
         }
+        
+        /* Property card hover effects */
+        .property-card {
+            transition: all 0.3s ease;
+            overflow: hidden;
+        }
+        .property-card:hover {
+            transform: translateY(-10px);
+        }
+        .property-card .property-image {
+            transition: all 0.5s ease;
+        }
+        .property-card:hover .property-image {
+            transform: scale(1.1);
+        }
+        
+        /* Property gallery */
+        .property-gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 1.5rem;
+        }
+        
+        /* Property badge */
+        .property-badge {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            z-index: 10;
+        }
+        
+        /* Property slider */
+        .property-slider {
+            scroll-behavior: smooth;
+            scroll-snap-type: x mandatory;
+            -webkit-overflow-scrolling: touch;
+        }
+        .property-slider > div {
+            scroll-snap-align: start;
+        }
+        @keyframes bounceHorizontal {
+            0%, 100% {
+                transform: translateX(-15px);
+            }
+            50% {
+                transform: translateX(15px);
+            }
+        }
+        .animate-bounce-horizontal {
+            animation: bounceHorizontal 2s ease-in-out infinite;
+        }
     </style>
 </head>
 <body class="font-tajawal text-gray-800 bg-gray-50">
@@ -147,8 +178,8 @@
         <!-- Main Header -->
         <div class="container mx-auto px-4 py-4 flex items-center justify-between">
             <div class="flex items-center">
-                <div class="mr-1  h-12 w-12 rounded-full flex-shrink-0">
-                    <img src="logo.png" alt="شعار المسار العقاري المميز" class="h-full w-full rounded-full ml-4 object-contain">
+                <div class="mr-1 h-12 w-12 rounded-full flex-shrink-0">
+                    <img src="logo.png" alt="شعار المسار الرقمى المميز للخدمات العقارية" class="h-full w-full rounded-full ml-4 object-contain">
                 </div>
                 <div class="relative">
                     <div class="text-lg lg:text-3xl font-extrabold">
@@ -165,6 +196,7 @@
                     <li><a href="#hero" class="nav-link font-semibold text-gray-700 hover:text-primary-600 transition-colors duration-300">الرئيسية</a></li>
                     <li><a href="#about" class="nav-link font-semibold text-gray-700 hover:text-primary-600 transition-colors duration-300">من نحن</a></li>
                     <li><a href="#features" class="nav-link font-semibold text-gray-700 hover:text-primary-600 transition-colors duration-300">المميزات</a></li>
+                    <li><a href="#properties" class="nav-link font-semibold text-gray-700 hover:text-primary-600 transition-colors duration-300">العقارات المميزة</a></li>
                     <li><a href="#services" class="nav-link font-semibold text-gray-700 hover:text-primary-600 transition-colors duration-300">الخدمات</a></li>
                     <li><a href="#projects" class="nav-link font-semibold text-gray-700 hover:text-primary-600 transition-colors duration-300">مشاريعنا</a></li>
                     <li><a href="#contact" class="nav-link font-semibold text-gray-700 hover:text-primary-600 transition-colors duration-300">اتصل بنا</a></li>
@@ -182,6 +214,7 @@
             </div>
         </div>
         
+        
         <!-- Mobile Menu -->
         <div class="mobile-menu lg:hidden" id="mobile-menu">
             <div class="container mx-auto px-4 py-3 bg-white border-t border-gray-100">
@@ -189,6 +222,7 @@
                     <li><a href="#hero" class="block font-semibold text-gray-700 hover:text-primary-600 transition-colors duration-300">الرئيسية</a></li>
                     <li><a href="#about" class="block font-semibold text-gray-700 hover:text-primary-600 transition-colors duration-300">من نحن</a></li>
                     <li><a href="#features" class="block font-semibold text-gray-700 hover:text-primary-600 transition-colors duration-300">المميزات</a></li>
+                    <li><a href="#properties" class="block font-semibold text-gray-700 hover:text-primary-600 transition-colors duration-300">العقارات المميزة</a></li>
                     <li><a href="#services" class="block font-semibold text-gray-700 hover:text-primary-600 transition-colors duration-300">الخدمات</a></li>
                     <li><a href="#projects" class="block font-semibold text-gray-700 hover:text-primary-600 transition-colors duration-300">مشاريعنا</a></li>
                     <li><a href="#contact" class="block font-semibold text-gray-700 hover:text-primary-600 transition-colors duration-300">اتصل بنا</a></li>
@@ -202,14 +236,15 @@
         </div>
     </header>
 
+     
     <!-- Hero Section -->
-    <section id="hero" class="relative md:pt-24 pt-16 pb-20 md:pt-48 md:pb-32 bg-gradient-to-br from-primary-900 to-primary-700 text-white overflow-hidden">
+    <section id="hero" class="relative md:pt-24 pt-16 pb-20 md:pt-48 md:pb-32 bg-gradient-to-br from-primary-800 to-primary-600 text-white overflow-hidden">
         <div class="absolute inset-0 opacity-10">
             <div class="absolute inset-0 bg-black opacity-50"></div>
             <div class="h-full w-full bg-[url('https://images.unsplash.com/photo-1560518883-ce09059eeffa?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1073&q=80')] bg-cover bg-center"></div>
         </div>
-        <div class="container mx-auto px-4  relative z-10 mt-5  ">
-            <div class="flex flex-col md:flex-row items-center justify-between gap-4 md:gap-12  mb-8 md:mb-24 px-3 w-full">
+        <div class="container mx-auto px-4 relative z-10 mt-5">
+            <div class="flex flex-col md:flex-row items-center justify-between gap-4 md:gap-12 mb-8 md:mb-24 px-3 w-full">
                 <!-- First column - Circular element with text -->
                 <div class="w-full md:w-1/2 flex justify-center animate-float animate-slide-left my-4 md:my-0">
                     <div class="relative w-full max-w-xs md:max-w-none">
@@ -251,7 +286,7 @@
                         </p>
                     </div>
                     <!-- Reduced button size for better mobile fit -->
-                    <a href="#contact" class="inline-block bg-gradient-to-l from-gold-600 to-gold-500 hover:from-gold-700 hover:to-gold-600 text-white font-bold py-2 px-4 sm:py-3 sm:px-6 md:py-4 md:px-8 rounded-lg shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300 mb-4 sm:mb-0">سجل بياناتك معنا</a>
+                    <a href="#properties" class="inline-block bg-gradient-to-l from-gold-600 to-gold-500 hover:from-gold-700 hover:to-gold-600 text-white font-bold py-2 px-4 sm:py-3 sm:px-6 md:py-4 md:px-8 rounded-lg shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300 mb-4 sm:mb-0">تصفح العقارات المميزة</a>
                 </div>
             </div>
         </div>
@@ -261,9 +296,25 @@
             </svg>
         </div>
     </section>
-       <!-- About Section -->
-       <section id="about" class="py-20 md:py-28">
+    
+    <!-- About Section -->
+    <section id="about" class="py-20 md:py-28">
         <div class="container mx-auto px-4">
+            <div class="text-center  animate-bounce-horizontal">
+                <div class="bg-white/50 backdrop-blur-sm px-4 py-1.5 rounded-full shadow-lg mb-10">
+                    <span class="font-bold text-3xl">
+                        <span class="font-bold
+text-primary-800">اشتر</span>
+                        <span class="font-bold
+text-primary-800">بيتك</span>
+                        <span class="font-bold
+text-primary-800 font-extrabold">0%</span>
+                        <span class="font-bold
+text-primary-800">عمولة</span>
+                    </span>
+                </div>
+            </div>
+        
             <div class="text-center mb-16">
                 <h2 class="text-3xl md:text-4xl font-bold mb-4 text-primary-800">المسار الرقمى المميز للخدمات العقارية</h2>
                 <div class="w-24 h-1 bg-gradient-to-l from-gold-600 to-gold-500 mx-auto"></div>
@@ -271,7 +322,7 @@
             <div class="max-w-4xl mx-auto text-center mb-16">
                 <h3 class="text-2xl font-bold text-gold-600 mb-6">هلا بالعقاريين</h3>
                 <p class="text-gray-600 mb-4">اينما كنت في السعودية وحاصل علي رخصة فال كمسوق فردي أو وسيط عقاري وحاب ترتقي بعملك تقنيا وتتطور بأعمالك في المجال العقاري.</p>
-                <p class="text-gray-600">نحن في المسار العقاري المميز نقدم لك عدة خدمات نساعدك في الارتقاء بخدماتك ابتداءا من تقديم استشارات عقارية متخصصة تساعدك في تسويق عقاراتك وبكل سهولة. كما ستجد اتفاقيات مع شركات معتمدة بامكانك التواصل والاتفاق معهم بكل أريحية تامه في إتمام اعمالك.</p>
+                <p class="text-gray-600">نحن في المسار الرقمى المميز للخدمات العقارية نقدم لك عدة خدمات نساعدك في الارتقاء بخدماتك ابتداءا من تقديم استشارات عقارية متخصصة تساعدك في تسويق عقاراتك وبكل سهولة. كما ستجد اتفاقيات مع شركات معتمدة بامكانك التواصل والاتفاق معهم بكل أريحية تامه في إتمام اعمالك.</p>
             </div>
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                 <div class="bg-white p-8 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300">
@@ -323,9 +374,352 @@
             </div>
         </div>
     </section>
+    <!-- Featured Properties Section (NEW) -->
+    <section id="properties" class="py-20 md:py-28 bg-gray-100">
+        <div class="container mx-auto px-4">
+            <div class="text-center  animate-bounce-horizontal">
+                <div class="bg-white/50 backdrop-blur-sm px-4 py-1.5 rounded-full shadow-lg mb-10">
+                    <span class="font-bold text-3xl">
+                        <span class="font-bold
+    text-primary-800">اشتر</span>
+                        <span class="font-bold
+    text-primary-800">بيتك</span>
+                        <span class="font-bold
+    text-primary-800 font-extrabold">0%</span>
+                        <span class="font-bold
+    text-primary-800">عمولة</span>
+                    </span>
+                </div>
+            </div>
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4 text-primary-800">العقارات المميزة</h2>
+                <div class="w-24 h-1 bg-gradient-to-l from-gold-600 to-gold-500 mx-auto"></div>
+                <p class="mt-6 text-gray-600 max-w-2xl mx-auto">اكتشف أفضل العقارات المتاحة في مختلف مناطق المملكة العربية السعودية</p>
+            </div>
+
+            <!-- Property Filter -->
+            <div class="bg-white rounded-xl shadow-lg p-6 mb-12">
+                <div class="grid grid-cols-1 md:grid-cols-4 gap-4">
+                    <div>
+                        <label class="block text-gray-700 font-medium mb-2">نوع العقار</label>
+                        <select class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent">
+                            <option value="">جميع العقارات</option>
+                            <option value="villa">فيلا</option>
+                            <option value="apartment">شقة</option>
+                            <option value="land">أرض</option>
+                            <option value="commercial">تجاري</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label class="block text-gray-700 font-medium mb-2">المدينة</label>
+                        <select class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent">
+                            <option value="">جميع المدن</option>
+                            <option value="riyadh">الرياض</option>
+                            <option value="jeddah">جدة</option>
+                            <option value="dammam">الدمام</option>
+                            <option value="makkah">مكة المكرمة</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label class="block text-gray-700 font-medium mb-2">السعر (حتى)</label>
+                        <select class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent">
+                            <option value="">جميع الأسعار</option>
+                            <option value="500000">500,000 ريال</option>
+                            <option value="1000000">1,000,000 ريال</option>
+                            <option value="2000000">2,000,000 ريال</option>
+                            <option value="5000000">5,000,000 ريال</option>
+                        </select>
+                    </div>
+                    <div class="flex items-end">
+                        <button class="w-full bg-gradient-to-l from-primary-600 to-primary-500 hover:from-primary-700 hover:to-primary-600 text-white font-bold py-3 px-6 rounded-lg shadow-lg hover:shadow-xl transition-all duration-300">
+                            <i class="fas fa-search ml-2"></i>
+                            بحث
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Property Cards -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Property Card 1 -->
+                <div class="property-card bg-white rounded-xl overflow-hidden shadow-lg">
+                    <div class="relative">
+                        <div class="property-badge">
+                            <span class="bg-primary-600 text-white text-sm font-bold px-3 py-1 rounded-lg">جديد</span>
+                        </div>
+                        <div class="h-64 overflow-hidden">
+                            <img src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="فيلا فاخرة" class="property-image w-full h-full object-cover">
+                        </div>
+                        <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent p-4">
+                            <div class="flex justify-between items-center">
+                                <span class="text-white font-bold text-xl">2,500,000 ريال</span>
+                                <span class="bg-gold-600 text-white text-xs font-bold px-2 py-1 rounded">للبيع</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2 text-primary-800">فيلا فاخرة في شمال الرياض</h3>
+                        <p class="text-gray-600 mb-4 line-clamp-2">فيلا حديثة بتصميم عصري، تتكون من 5 غرف نوم و6 حمامات ومسبح خاص وحديقة واسعة.</p>
+                        <div class="flex flex-wrap gap-4 mb-4">
+                            <div class="flex items-center text-gray-700">
+                                <i class="fas fa-ruler-combined ml-1"></i>
+                                <span>450 م²</span>
+                            </div>
+                            <div class="flex items-center text-gray-700">
+                                <i class="fas fa-bed ml-1"></i>
+                                <span>5 غرف</span>
+                            </div>
+                            <div class="flex items-center text-gray-700">
+                                <i class="fas fa-bath ml-1"></i>
+                                <span>6 حمامات</span>
+                            </div>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <div class="flex items-center text-gray-700">
+                                <i class="fas fa-map-marker-alt ml-1 text-primary-600"></i>
+                                <span>حي النرجس، الرياض</span>
+                            </div>
+                            <a href="#" class="text-primary-600 hover:text-primary-700 font-bold">التفاصيل</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Property Card 2 -->
+                <div class="property-card bg-white rounded-xl overflow-hidden shadow-lg">
+                    <div class="relative">
+                        <div class="property-badge">
+                            <span class="bg-gold-600 text-white text-sm font-bold px-3 py-1 rounded-lg">مميز</span>
+                        </div>
+                        <div class="h-64 overflow-hidden">
+                            <img src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="شقة فاخرة" class="property-image w-full h-full object-cover">
+                        </div>
+                        <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent p-4">
+                            <div class="flex justify-between items-center">
+                                <span class="text-white font-bold text-xl">1,200,000 ريال</span>
+                                <span class="bg-gold-600 text-white text-xs font-bold px-2 py-1 rounded">للبيع</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2 text-primary-800">شقة فاخرة في وسط جدة</h3>
+                        <p class="text-gray-600 mb-4 line-clamp-2">شقة فاخرة بإطلالة بحرية، تتكون من 3 غرف نوم و3 حمامات وصالة واسعة ومطبخ مجهز بالكامل.</p>
+                        <div class="flex flex-wrap gap-4 mb-4">
+                            <div class="flex items-center text-gray-700">
+                                <i class="fas fa-ruler-combined ml-1"></i>
+                                <span>180 م²</span>
+                            </div>
+                            <div class="flex items-center text-gray-700">
+                                <i class="fas fa-bed ml-1"></i>
+                                <span>3 غرف</span>
+                            </div>
+                            <div class="flex items-center text-gray-700">
+                                <i class="fas fa-bath ml-1"></i>
+                                <span>3 حمامات</span>
+                            </div>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <div class="flex items-center text-gray-700">
+                                <i class="fas fa-map-marker-alt ml-1 text-primary-600"></i>
+                                <span>حي الشاطئ، جدة</span>
+                            </div>
+                            <a href="#" class="text-primary-600 hover:text-primary-700 font-bold">التفاصيل</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Property Card 3 -->
+                <div class="property-card bg-white rounded-xl overflow-hidden shadow-lg">
+                    <div class="relative">
+                        <div class="h-64 overflow-hidden">
+                            <img src="https://images.unsplash.com/photo-1580587771525-78b9dba3b914?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="أرض استثمارية" class="property-image w-full h-full object-cover">
+                        </div>
+                        <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent p-4">
+                            <div class="flex justify-between items-center">
+                                <span class="text-white font-bold text-xl">3,500,000 ريال</span>
+                                <span class="bg-gold-600 text-white text-xs font-bold px-2 py-1 rounded">للبيع</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2 text-primary-800">أرض استثمارية في الدمام</h3>
+                        <p class="text-gray-600 mb-4 line-clamp-2">أرض استثمارية في موقع استراتيجي، مناسبة لإقامة مشروع تجاري أو سكني، مساحة كبيرة وسعر مميز.</p>
+                        <div class="flex flex-wrap gap-4 mb-4">
+                            <div class="flex items-center text-gray-700">
+                                <i class="fas fa-ruler-combined ml-1"></i>
+                                <span>1200 م²</span>
+                            </div>
+                            <div class="flex items-center text-gray-700">
+                                <i class="fas fa-road ml-1"></i>
+                                <span>شارعين</span>
+                            </div>
+                            <div class="flex items-center text-gray-700">
+                                <i class="fas fa-file-contract ml-1"></i>
+                                <span>صك إلكتروني</span>
+                            </div>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <div class="flex items-center text-gray-700">
+                                <i class="fas fa-map-marker-alt ml-1 text-primary-600"></i>
+                                <span>حي الشاطئ، الدمام</span>
+                            </div>
+                            <a href="#" class="text-primary-600 hover:text-primary-700 font-bold">التفاصيل</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Property Card 4 -->
+                <div class="property-card bg-white rounded-xl overflow-hidden shadow-lg">
+                    <div class="relative">
+                        <div class="property-badge">
+                            <span class="bg-primary-600 text-white text-sm font-bold px-3 py-1 rounded-lg">جديد</span>
+                        </div>
+                        <div class="h-64 overflow-hidden">
+                            <img src="https://images.unsplash.com/photo-1613977257363-707ba9348227?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="مكتب تجاري" class="property-image w-full h-full object-cover">
+                        </div>
+                        <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent p-4">
+                            <div class="flex justify-between items-center">
+                                <span class="text-white font-bold text-xl">80,000 ريال/سنة</span>
+                                <span class="bg-primary-600 text-white text-xs font-bold px-2 py-1 rounded">للإيجار</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2 text-primary-800">مكتب تجاري في الرياض</h3>
+                        <p class="text-gray-600 mb-4 line-clamp-2">مكتب تجاري فاخر في برج مكتبي حديث، مجهز بالكامل وجاهز للاستخدام الفوري، موقع مميز في وسط المدينة.</p>
+                        <div class="flex flex-wrap gap-4 mb-4">
+                            <div class="flex items-center text-gray-700">
+                                <i class="fas fa-ruler-combined ml-1"></i>
+                                <span>120 م²</span>
+                            </div>
+                            <div class="flex items-center text-gray-700">
+                                <i class="fas fa-door-open ml-1"></i>
+                                <span>4 غرف</span>
+                            </div>
+                            <div class="flex items-center text-gray-700">
+                                <i class="fas fa-parking ml-1"></i>
+                                <span>2 مواقف</span>
+                            </div>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <div class="flex items-center text-gray-700">
+                                <i class="fas fa-map-marker-alt ml-1 text-primary-600"></i>
+                                <span>طريق الملك فهد، الرياض</span>
+                            </div>
+                            <a href="#" class="text-primary-600 hover:text-primary-700 font-bold">التفاصيل</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Property Card 5 -->
+                <div class="property-card bg-white rounded-xl overflow-hidden shadow-lg">
+                    <div class="relative">
+                        <div class="h-64 overflow-hidden">
+                            <img src="https://images.unsplash.com/photo-1564013799919-ab600027ffc6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="فيلا مودرن" class="property-image w-full h-full object-cover">
+                        </div>
+                        <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent p-4">
+                            <div class="flex justify-between items-center">
+                                <span class="text-white font-bold text-xl">3,200,000 ريال</span>
+                                <span class="bg-gold-600 text-white text-xs font-bold px-2 py-1 rounded">للبيع</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2 text-primary-800">فيلا مودرن في المدينة المنورة</h3>
+                        <p class="text-gray-600 mb-4 line-clamp-2">فيلا بتصميم مودرن فاخر، تتكون من 6 غرف نوم و7 حمامات ومسبح خاص وحديقة واسعة ومجلس رجال ونساء منفصل.</p>
+                        <div class="flex flex-wrap gap-4 mb-4">
+                            <div class="flex items-center text-gray-700">
+                                <i class="fas fa-ruler-combined ml-1"></i>
+                                <span>550 م²</span>
+                            </div>
+                            <div class="flex items-center text-gray-700">
+                                <i class="fas fa-bed ml-1"></i>
+                                <span>6 غرف</span>
+                            </div>
+                            <div class="flex items-center text-gray-700">
+                                <i class="fas fa-bath ml-1"></i>
+                                <span>7 حمامات</span>
+                            </div>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <div class="flex items-center text-gray-700">
+                                <i class="fas fa-map-marker-alt ml-1 text-primary-600"></i>
+                                <span>حي الأزهري، المدينة المنورة</span>
+                            </div>
+                            <a href="#" class="text-primary-600 hover:text-primary-700 font-bold">التفاصيل</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Property Card 6 -->
+                <div class="property-card bg-white rounded-xl overflow-hidden shadow-lg">
+                    <div class="relative">
+                        <div class="property-badge">
+                            <span class="bg-gold-600 text-white text-sm font-bold px-3 py-1 rounded-lg">مميز</span>
+                        </div>
+                        <div class="h-64 overflow-hidden">
+                            <img src="https://images.unsplash.com/photo-1568605114967-8130f3a36994?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="شقة دوبلكس" class="property-image w-full h-full object-cover">
+                        </div>
+                        <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent p-4">
+                            <div class="flex justify-between items-center">
+                                <span class="text-white font-bold text-xl">1,800,000 ريال</span>
+                                <span class="bg-gold-600 text-white text-xs font-bold px-2 py-1 rounded">للبيع</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2 text-primary-800">شقة دوبلكس في مكة المكرمة</h3>
+                        <p class="text-gray-600 mb-4 line-clamp-2">شقة دوبلكس فاخرة بإطلالة مميزة، تتكون من 4 غرف نوم و4 حمامات وصالتين ومطبخ مجهز بالكامل.</p>
+                        <div class="flex flex-wrap gap-4 mb-4">
+                            <div class="flex items-center text-gray-700">
+                                <i class="fas fa-ruler-combined ml-1"></i>
+                                <span>250 م²</span>
+                            </div>
+                            <div class="flex items-center text-gray-700">
+                                <i class="fas fa-bed ml-1"></i>
+                                <span>4 غرف</span>
+                            </div>
+                            <div class="flex items-center text-gray-700">
+                                <i class="fas fa-bath ml-1"></i>
+                                <span>4 حمامات</span>
+                            </div>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <div class="flex items-center text-gray-700">
+                                <i class="fas fa-map-marker-alt ml-1 text-primary-600"></i>
+                                <span>حي العزيزية، مكة المكرمة</span>
+                            </div>
+                            <a href="#" class="text-primary-600 hover:text-primary-700 font-bold">التفاصيل</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Load More Button -->
+            <div class="text-center mt-12">
+                <button class="bg-white border-2 border-primary-600 text-primary-600 hover:bg-primary-50 font-bold py-3 px-8 rounded-lg shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300">
+                    عرض المزيد من العقارات
+                    <i class="fas fa-chevron-down mr-2"></i>
+                </button>
+            </div>
+        </div>
+    </section>
     <!-- Features Section -->
     <section id="features" class="py-20 md:py-28">
         <div class="container mx-auto px-4">
+            <div class="text-center  animate-bounce-horizontal">
+                <div class="bg-white/50 backdrop-blur-sm px-4 py-1.5 rounded-full shadow-lg mb-10">
+                    <span class="font-bold text-3xl">
+                        <span class="font-bold
+text-primary-800">اشتر</span>
+                        <span class="font-bold
+text-primary-800">بيتك</span>
+                        <span class="font-bold
+text-primary-800 font-extrabold">0%</span>
+                        <span class="font-bold
+text-primary-800">عمولة</span>
+                    </span>
+                </div>
+            </div>
             <div class="text-center mb-16">
                 <h2 class="text-3xl md:text-4xl font-bold mb-4 text-primary-800">مميزات خدماتنا العقارية</h2>
                 <div class="w-24 h-1 bg-gradient-to-l from-gold-600 to-gold-500 mx-auto"></div>
@@ -377,9 +771,25 @@
         </div>
     </section>
 
+    
+
     <!-- Services Section -->
-    <section id="services" class="py-20 md:py-28 bg-gray-100">
+    <section id="services" class="py-20 md:py-28">
         <div class="container mx-auto px-4">
+            <div class="text-center  animate-bounce-horizontal">
+                <div class="bg-white/50 backdrop-blur-sm px-4 py-1.5 rounded-full shadow-lg mb-10">
+                    <span class="font-bold text-3xl">
+                        <span class="font-bold
+text-primary-800">اشتر</span>
+                        <span class="font-bold
+text-primary-800">بيتك</span>
+                        <span class="font-bold
+text-primary-800 font-extrabold">0%</span>
+                        <span class="font-bold
+text-primary-800">عمولة</span>
+                    </span>
+                </div>
+            </div>
             <div class="text-center mb-16">
                 <h2 class="text-3xl md:text-4xl font-bold mb-4 text-primary-800">خدماتنا العقارية</h2>
                 <div class="w-24 h-1 bg-gradient-to-l from-gold-600 to-gold-500 mx-auto"></div>
@@ -444,19 +854,35 @@
         </div>
     </section>
 
-    <!-- Projects Section -->
-    <section id="projects" class="py-20 md:py-28">
+    <!-- Projects Section (ENHANCED) -->
+    <section id="projects" class="py-20 md:py-28 bg-gray-100">
         <div class="container mx-auto px-4">
+            <div class="text-center  animate-bounce-horizontal">
+                <div class="bg-white/50 backdrop-blur-sm px-4 py-1.5 rounded-full shadow-lg mb-10">
+                    <span class="font-bold text-3xl">
+                        <span class="font-bold
+text-primary-800">اشتر</span>
+                        <span class="font-bold
+text-primary-800">بيتك</span>
+                        <span class="font-bold
+text-primary-800 font-extrabold">0%</span>
+                        <span class="font-bold
+text-primary-800">عمولة</span>
+                    </span>
+                </div>
+            </div>
             <div class="text-center mb-16">
                 <h2 class="text-3xl md:text-4xl font-bold mb-4 text-primary-800">مشاريعنا العقارية</h2>
                 <div class="w-24 h-1 bg-gradient-to-l from-gold-600 to-gold-500 mx-auto"></div>
                 <p class="mt-6 text-gray-600 max-w-2xl mx-auto">نماذج من المشاريع العقارية المميزة التي قمنا بتنفيذها</p>
             </div>
+            
+            <!-- Projects Gallery -->
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Project 1 -->
                 <div class="group relative overflow-hidden rounded-xl shadow-lg">
-                    <div class="h-64 bg-gradient-to-br from-primary-700 to-primary-900 flex flex-col items-center justify-center text-white">
-                        <i class="fas fa-home text-5xl mb-4"></i>
-                        <span class="text-xl font-bold">مشروع فلل فاخرة</span>
+                    <div class="h-64 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1613490493576-7fde63acd811?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="مشروع فلل فاخرة" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
                     </div>
                     <div class="absolute inset-0 bg-primary-900/80 opacity-0 group-hover:opacity-100 flex items-center justify-center transition-all duration-300">
                         <div class="text-white text-center p-6 transform translate-y-8 group-hover:translate-y-0 transition-transform duration-300">
@@ -466,10 +892,11 @@
                         </div>
                     </div>
                 </div>
+                
+                <!-- Project 2 -->
                 <div class="group relative overflow-hidden rounded-xl shadow-lg">
-                    <div class="h-64 bg-gradient-to-br from-primary-700 to-primary-900 flex flex-col items-center justify-center text-white">
-                        <i class="fas fa-city text-5xl mb-4"></i>
-                        <span class="text-xl font-bold">برج سكني</span>
+                    <div class="h-64 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="برج سكني" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
                     </div>
                     <div class="absolute inset-0 bg-primary-900/80 opacity-0 group-hover:opacity-100 flex items-center justify-center transition-all duration-300">
                         <div class="text-white text-center p-6 transform translate-y-8 group-hover:translate-y-0 transition-transform duration-300">
@@ -479,10 +906,11 @@
                         </div>
                     </div>
                 </div>
+                
+                <!-- Project 3 -->
                 <div class="group relative overflow-hidden rounded-xl shadow-lg">
-                    <div class="h-64 bg-gradient-to-br from-primary-700 to-primary-900 flex flex-col items-center justify-center text-white">
-                        <i class="fas fa-hotel text-5xl mb-4"></i>
-                        <span class="text-xl font-bold">منتجع سياحي</span>
+                    <div class="h-64 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="منتجع سياحي" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
                     </div>
                     <div class="absolute inset-0 bg-primary-900/80 opacity-0 group-hover:opacity-100 flex items-center justify-center transition-all duration-300">
                         <div class="text-white text-center p-6 transform translate-y-8 group-hover:translate-y-0 transition-transform duration-300">
@@ -492,10 +920,11 @@
                         </div>
                     </div>
                 </div>
+                
+                <!-- Project 4 -->
                 <div class="group relative overflow-hidden rounded-xl shadow-lg">
-                    <div class="h-64 bg-gradient-to-br from-primary-700 to-primary-900 flex flex-col items-center justify-center text-white">
-                        <i class="fas fa-store text-5xl mb-4"></i>
-                        <span class="text-xl font-bold">مجمع تجاري</span>
+                    <div class="h-64 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1636572011682-2154c53ba3e9?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTAzfHxyZWFsc3RhdGUlMjBDb21tZXJjaWFsJTIwY29tcGxleHxlbnwwfHwwfHx8MA%3D%3D">
                     </div>
                     <div class="absolute inset-0 bg-primary-900/80 opacity-0 group-hover:opacity-100 flex items-center justify-center transition-all duration-300">
                         <div class="text-white text-center p-6 transform translate-y-8 group-hover:translate-y-0 transition-transform duration-300">
@@ -505,10 +934,11 @@
                         </div>
                     </div>
                 </div>
+                
+                <!-- Project 5 -->
                 <div class="group relative overflow-hidden rounded-xl shadow-lg">
-                    <div class="h-64 bg-gradient-to-br from-primary-700 to-primary-900 flex flex-col items-center justify-center text-white">
-                        <i class="fas fa-map-marked-alt text-5xl mb-4"></i>
-                        <span class="text-xl font-bold">أراضي استثمارية</span>
+                    <div class="h-64 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1542889601-399c4f3a8402?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="أراضي استثمارية" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
                     </div>
                     <div class="absolute inset-0 bg-primary-900/80 opacity-0 group-hover:opacity-100 flex items-center justify-center transition-all duration-300">
                         <div class="text-white text-center p-6 transform translate-y-8 group-hover:translate-y-0 transition-transform duration-300">
@@ -518,10 +948,11 @@
                         </div>
                     </div>
                 </div>
+                
+                <!-- Project 6 -->
                 <div class="group relative overflow-hidden rounded-xl shadow-lg">
-                    <div class="h-64 bg-gradient-to-br from-primary-700 to-primary-900 flex flex-col items-center justify-center text-white">
-                        <i class="fas fa-building text-5xl mb-4"></i>
-                        <span class="text-xl font-bold">مكاتب إدارية</span>
+                    <div class="h-64 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="مكاتب إدارية" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
                     </div>
                     <div class="absolute inset-0 bg-primary-900/80 opacity-0 group-hover:opacity-100 flex items-center justify-center transition-all duration-300">
                         <div class="text-white text-center p-6 transform translate-y-8 group-hover:translate-y-0 transition-transform duration-300">
@@ -532,27 +963,96 @@
                     </div>
                 </div>
             </div>
+            
+            <!-- Featured Project (NEW) -->
+            <div class="mt-16 bg-white rounded-xl shadow-lg overflow-hidden">
+                <div class="grid grid-cols-1 lg:grid-cols-2">
+                    <div class="relative h-96 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="مشروع مميز" class="w-full h-full object-cover">
+                        <div class="absolute top-4 right-4">
+                            <span class="bg-gold-600 text-white text-sm font-bold px-4 py-2 rounded-lg">مشروع مميز</span>
+                        </div>
+                    </div>
+                    <div class="p-8 flex flex-col justify-center">
+                        <h3 class="text-3xl font-bold mb-4 text-primary-800">مجمع الواحة السكني</h3>
+                        <p class="text-gray-600 mb-6">مشروع سكني متكامل يضم 50 فيلا فاخرة و100 شقة سكنية مع مرافق متكاملة تشمل مسابح ونوادي رياضية وحدائق ومساحات خضراء واسعة. يقع المشروع في موقع استراتيجي في شمال الرياض.</p>
+                        
+                        <div class="grid grid-cols-2 gap-4 mb-6">
+                            <div class="flex items-center">
+                                <i class="fas fa-map-marker-alt text-primary-600 ml-2"></i>
+                                <span class="text-gray-700">شمال الرياض</span>
+                            </div>
+                            <div class="flex items-center">
+                                <i class="fas fa-ruler-combined text-primary-600 ml-2"></i>
+                                <span class="text-gray-700">20,000 م²</span>
+                            </div>
+                            <div class="flex items-center">
+                                <i class="fas fa-home text-primary-600 ml-2"></i>
+                                <span class="text-gray-700">150 وحدة سكنية</span>
+                            </div>
+                            <div class="flex items-center">
+                                <i class="fas fa-calendar-alt text-primary-600 ml-2"></i>
+                                <span class="text-gray-700">اكتمل في 2023</span>
+                            </div>
+                        </div>
+                        
+                        <div class="flex flex-wrap gap-4">
+                            <button class="bg-gradient-to-l from-primary-600 to-primary-500 hover:from-primary-700 hover:to-primary-600 text-white font-bold py-3 px-6 rounded-lg shadow-lg hover:shadow-xl transition-all duration-300">
+                                عرض تفاصيل المشروع
+                            </button>
+                            <button class="bg-white border-2 border-primary-600 text-primary-600 hover:bg-primary-50 font-bold py-3 px-6 rounded-lg shadow-lg hover:shadow-xl transition-all duration-300">
+                                معرض الصور
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
 
     <!-- Call to Action Section -->
     <section class="py-20 md:py-28 bg-gradient-to-r from-primary-800 to-primary-600 text-white">
         <div class="container mx-auto px-4 text-center">
+            <div class="text-center  animate-bounce-horizontal">
+                <div class="bg-white/50 backdrop-blur-sm px-4 py-1.5 rounded-full shadow-lg mb-10">
+                    <span class="font-bold text-3xl">
+                        <span class="font-bold
+text-primary-800">استثمر</span>
+                        <span class="font-bold
+text-primary-800"></span>
+                        <span class="font-bold
+text-primary-800 font-extrabold">0%</span>
+                        <span class="font-bold
+text-primary-800">عمولة</span>
+                    </span>
+                </div>
+            </div>
             <h2 class="text-3xl md:text-4xl font-bold mb-6">استثمر في مستقبلك العقاري</h2>
             <p class="text-lg md:text-xl max-w-3xl mx-auto mb-10 opacity-90">نحن نساعدك في اتخاذ القرار الاستثماري الصحيح في سوق العقارات السعودي. تواصل معنا اليوم للحصول على استشارة عقارية مجانية.</p>
             <div class="flex flex-col md:flex-row gap-4 justify-center">
                 <a href="#contact" class="bg-white text-primary-800 hover:bg-gray-100 font-bold py-3 px-8 rounded-lg shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300">سجل بياناتك معنا</a>
-                <a href="#projects" class="bg-transparent border-2 border-white text-white hover:bg-white/10 font-bold py-3 px-8 rounded-lg shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300">مشاهدة مشاريعنا</a>
+                <a href="#properties" class="bg-transparent border-2 border-white text-white hover:bg-white/10 font-bold py-3 px-8 rounded-lg shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300">تصفح العقارات</a>
             </div>
         </div>
     </section>
 
-
- 
-
     <!-- Contact Section -->
     <section id="contact" class="py-20 md:py-28 bg-gray-100">
         <div class="container mx-auto px-4">
+            <div class="text-center  animate-bounce-horizontal">
+                <div class="bg-white/50 backdrop-blur-sm px-4 py-1.5 rounded-full shadow-lg mb-10">
+                    <span class="font-bold text-3xl">
+                        <span class="font-bold
+text-primary-800">اشتر</span>
+                        <span class="font-bold
+text-primary-800">بيتك</span>
+                        <span class="font-bold
+text-primary-800 font-extrabold">0%</span>
+                        <span class="font-bold
+text-primary-800">عمولة</span>
+                    </span>
+                </div>
+            </div>
             <div class="text-center mb-16">
                 <h2 class="text-3xl md:text-4xl font-bold mb-4 text-primary-800">تواصل معنا</h2>
                 <div class="w-24 h-1 bg-gradient-to-l from-gold-600 to-gold-500 mx-auto"></div>
@@ -654,7 +1154,7 @@
     </section>
 
     <!-- Floating CTA -->
-    <div class="fixed bottom-8 left-8 z-50 hidden ">
+    <div class="fixed bottom-8 left-8 z-50 hidden lg:block">
         <a href="#contact" class="flex items-center bg-gradient-to-l from-gold-600 to-gold-500 hover:from-gold-700 hover:to-gold-600 text-white font-bold py-3 px-6 rounded-full shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300">
             <i class="fas fa-headset text-xl ml-2"></i>
             <span>تواصل معنا</span>
@@ -664,9 +1164,23 @@
     <!-- Footer -->
     <footer class="bg-gray-900 text-white">
         <div class="container mx-auto px-4 py-16">
+            <div class="text-center  animate-bounce-horizontal">
+                <div class="bg-white/50 backdrop-blur-sm px-4 py-1.5 rounded-full shadow-lg mb-10">
+                    <span class="font-bold text-3xl">
+                        <span class="font-bold
+text-primary-800">اشتر</span>
+                        <span class="font-bold
+text-primary-800">بيتك</span>
+                        <span class="font-bold
+text-primary-800 font-extrabold">0%</span>
+                        <span class="font-bold
+text-primary-800">عمولة</span>
+                    </span>
+                </div>
+            </div>
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
                 <div>
-                    <h3 class="text-2xl font-bold mb-6">المسار العقاري المميز</h3>
+                    <h3 class="text-2xl font-bold mb-6">المسار الرقمى المميز للخدمات العقارية</h3>
                     <p class="text-gray-400 mb-6">نقدم خدمات عقارية متكاملة في المملكة العربية السعودية، بهدف تعزيز استثماراتك العقارية وزيادة فرص النجاح في سوق العقارات التنافسي.</p>
                 </div>
                 <div>
@@ -675,6 +1189,7 @@
                         <li><a href="#hero" class="text-gray-400 hover:text-white transition-colors duration-300">الرئيسية</a></li>
                         <li><a href="#about" class="text-gray-400 hover:text-white transition-colors duration-300">من نحن</a></li>
                         <li><a href="#features" class="text-gray-400 hover:text-white transition-colors duration-300">المميزات</a></li>
+                        <li><a href="#properties" class="text-gray-400 hover:text-white transition-colors duration-300">العقارات المميزة</a></li>
                         <li><a href="#services" class="text-gray-400 hover:text-white transition-colors duration-300">الخدمات</a></li>
                         <li><a href="#projects" class="text-gray-400 hover:text-white transition-colors duration-300">مشاريعنا</a></li>
                         <li><a href="#contact" class="text-gray-400 hover:text-white transition-colors duration-300">اتصل بنا</a></li>
@@ -703,7 +1218,7 @@
         </div>
         <div class="border-t border-gray-800 py-6">
             <div class="container mx-auto px-4 text-center">
-                <p class="text-gray-400">جميع الحقوق محفوظة &copy; 2025 المسار العقاري المميز</p>
+                <p class="text-gray-400">جميع الحقوق محفوظة &copy; 2025 المسار الرقمى المميز للخدمات العقارية</p>
             </div>
         </div>
     </footer>
